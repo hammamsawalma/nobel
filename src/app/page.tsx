@@ -12,6 +12,7 @@ import ExecutionTimeline from "@/components/v2/ExecutionTimeline";
 import V11Header from "@/components/v2/Header";
 import V11Footer from "@/components/v2/Footer";
 import FaqAccordion from "@/components/v2/FaqAccordion";
+import { ShieldCheck } from "lucide-react";
 
 export default function Variant11NobelWealth() {
 
@@ -68,17 +69,39 @@ export default function Variant11NobelWealth() {
 
                 <div className="max-w-7xl mx-auto w-full relative z-10 text-center mt-12 md:mt-20">
                     <motion.div
-                        initial={{ scale: 0.8, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
+                        initial={{ scale: 0.8, opacity: 0, rotateY: 90 }}
+                        animate={{ scale: 1, opacity: 1, rotateY: 0 }}
                         transition={{ ...snapSpring, delay: 0.1 } as any}
-                        className="mb-6 md:mb-8 flex justify-center"
+                        className="mb-8 md:mb-12 flex justify-center relative cursor-default group"
+                        style={{ perspective: 1000 }}
                     >
-                        <div className="bg-gradient-to-r from-amber-700/30 to-yellow-600/30 border border-amber-400/40 backdrop-blur-md px-5 md:px-8 py-2 md:py-3 rounded-full flex items-center gap-3 md:gap-4 shadow-[0_0_40px_rgba(245,158,11,0.3)] hover:shadow-[0_0_60px_rgba(245,158,11,0.5)] transition-all cursor-default">
-                            <span className="text-amber-400 text-[10px] md:text-sm">✦</span>
-                            <span className="text-amber-50 font-black uppercase tracking-[0.2em] md:tracking-[0.3em] text-[9px] md:text-xs drop-shadow-md">
-                                25 Years of Absolute Preservation
-                            </span>
-                            <span className="text-amber-400 text-[10px] md:text-sm">✦</span>
+                        {/* Huge pulsating glow behind the badge */}
+                        <div className="absolute inset-x-0 inset-y-[-20%] md:inset-[-20%] bg-amber-500/20 rounded-full blur-[40px] md:blur-[60px] animate-pulse group-hover:bg-amber-500/40 transition-all duration-700"></div>
+
+                        {/* The Seal Container */}
+                        <div className="relative bg-gradient-to-br from-[#1A2A4A] to-[#0A1A3A] border border-amber-400/40 p-1 rounded-2xl md:rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.5)] overflow-hidden scale-90 md:scale-100">
+                            {/* Inner metallic rim */}
+                            <div className="bg-gradient-to-b from-[#0A1A3A] to-black border border-white/5 rounded-xl md:rounded-2xl p-6 md:p-8 flex flex-col items-center justify-center relative z-10 overflow-hidden min-w-[280px] md:min-w-[340px]">
+
+                                {/* Animated flare effect */}
+                                <div className="absolute top-0 left-[-100%] w-[50%] h-[200%] bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12 group-hover:left-[200%] transition-all duration-1000 ease-in-out z-0"></div>
+
+                                {/* The Centerpiece Logo */}
+                                <div className="bg-gradient-to-br from-amber-500/20 to-amber-700/10 p-4 md:p-5 rounded-full mb-4 md:mb-5 border border-amber-500/30 shadow-[0_0_30px_rgba(245,158,11,0.2)] relative z-10">
+                                    <ShieldCheck className="w-12 h-12 md:w-16 md:h-16 text-amber-400 drop-shadow-[0_0_15px_rgba(245,158,11,0.5)]" />
+                                </div>
+
+                                {/* Typography */}
+                                <div className="text-center relative z-10">
+                                    <div className="text-amber-50 font-black text-4xl md:text-5xl tracking-tighter leading-none mb-2 md:mb-3 drop-shadow-md">
+                                        25<span className="text-xl md:text-2xl font-bold tracking-widest text-amber-200 uppercase ml-2 md:ml-3">Years</span>
+                                    </div>
+                                    <div className="text-[10px] md:text-sm font-black uppercase tracking-[0.2em] md:tracking-[0.3em] text-amber-500 whitespace-nowrap drop-shadow-sm">
+                                        Absolute Preservation
+                                    </div>
+                                    <div className="mt-3 md:mt-4 w-12 md:w-16 h-[2px] bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto"></div>
+                                </div>
+                            </div>
                         </div>
                     </motion.div>
 
