@@ -4,58 +4,16 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRef } from 'react';
+import InteractiveProfitCalculator from '@/components/v11/InteractiveProfitCalculator';
+import MarketTicker from '@/components/v11/MarketTicker';
+import TrustMarquee from '@/components/v11/TrustMarquee';
+import ExecutionTimeline from "@/components/v11/ExecutionTimeline";
 
-// Custom V11 Header
-const V11Header = () => (
-    <header className="fixed top-0 w-full z-50 bg-[#0A1128]/80 backdrop-blur-md border-b border-[#1A2E5B] px-8 py-4 flex justify-between items-center text-white">
-        <div className="font-black text-2xl tracking-tighter">
-            NOBEL <span className="text-[#3A86FF] font-light">| METROPOLITAN</span>
-        </div>
-        <nav className="hidden md:flex gap-8 text-sm font-bold tracking-widest uppercase text-[#B8C0D4]">
-            <Link href="#" className="hover:text-white transition-colors">Yield Matrix</Link>
-            <Link href="#" className="hover:text-white transition-colors">Custodial Tech</Link>
-            <Link href="#" className="hover:text-white transition-colors">Advisory Node</Link>
-        </nav>
-        <button className="bg-[#3A86FF] hover:bg-[#2A75E6] text-white px-6 py-2 rounded font-bold uppercase tracking-widest text-xs transition-colors">
-            Initialize Contact
-        </button>
-    </header>
-);
+import V11Header from "@/components/v11/Header";
+import V11Footer from "@/components/v11/Footer";
+import FaqAccordion from "@/components/v11/FaqAccordion";
 
-// Custom V11 Footer
-const V11Footer = () => (
-    <footer className="bg-[#050814] text-[#B8C0D4] border-t border-[#1A2E5B] py-16 px-8 text-center sm:text-left">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
-            <div className="md:col-span-2">
-                <div className="font-black text-3xl tracking-tighter text-white mb-4">
-                    NOBEL
-                </div>
-                <p className="max-w-sm text-sm leading-relaxed mb-6">
-                    Next-generation fixed income architecture for Australian investors. Deep liquidity. Total preservation.
-                </p>
-                <p className="text-xs text-[#4A648C]">© 2026 Nobel Private Wealth. All systems nominal.</p>
-            </div>
-            <div>
-                <h4 className="text-white font-bold mb-4 uppercase tracking-widest text-sm">System Hub</h4>
-                <ul className="space-y-2 text-sm">
-                    <li><Link href="/" className="hover:text-[#3A86FF] transition-colors">Main Navigator</Link></li>
-                    <li><Link href="/about" className="hover:text-[#3A86FF] transition-colors">Firm Overview</Link></li>
-                    <li><Link href="/knowledge-hub" className="hover:text-[#3A86FF] transition-colors">Data Lake</Link></li>
-                </ul>
-            </div>
-            <div>
-                <h4 className="text-white font-bold mb-4 uppercase tracking-widest text-sm">Regulatory</h4>
-                <ul className="space-y-2 text-sm text-[#4A648C]">
-                    <li>ASIC AFSL: 457891</li>
-                    <li>Wholesale Investors Only</li>
-                    <li><Link href="#" className="hover:text-white transition-colors">Privacy Paradigm</Link></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-);
-
-export default function Variant11MetropolitanFlow() {
+export default function Variant11NobelWealth() {
 
     // High-velocity Spring configuration (adapted from V9)
     const snapSpring = {
@@ -87,73 +45,87 @@ export default function Variant11MetropolitanFlow() {
     };
 
     // V11 generated images mapping
-    // /Users/spacetoonevent/.gemini/antigravity/brain/e934b82b-28fe-461c-ba19-26aa5b07f75c/v11_metropolitan_flow_1_XX.png
+    // /Users/spacetoonevent/.gemini/antigravity/brain/e934b82b-28fe-461c-ba19-26aa5b07f5c/v11_metropolitan_flow_1_XX.png
     // Assume images are moved to /public/images/v11_metropolitan_flow_X.png later or we use specific AI files.
     // For now using placeholder relative paths we will copy to public
     const imgBase = "/images/v11"; // We will script a copy of the generated images to public/images/v11
 
     return (
-        <div className="bg-[#0A1128] text-[#E0E5F2] font-sans selection:bg-[#3A86FF] selection:text-white overflow-x-hidden min-h-screen">
+        <div className="bg-white text-gray-900 font-sans selection:bg-[#0A1A3A] selection:text-white overflow-x-hidden min-h-screen">
             <V11Header />
 
-            {/* SECTION 1: Video Hero */}
-            <section className="relative h-screen flex flex-col justify-end pb-32 px-6 lg:px-12 overflow-hidden border-b-4 border-[#3A86FF]">
+            {/* SECTION 1: Video Hero (Restored - Option 6A) */}
+            <section className="relative h-screen flex flex-col justify-center px-6 lg:px-12 overflow-hidden border-b-[8px] border-[#0A1A3A]">
                 <video
                     autoPlay loop muted playsInline
-                    className="absolute inset-0 w-full h-full object-cover z-0 filter brightness-50"
+                    className="absolute inset-0 w-full h-full object-cover z-0"
                 >
                     <source src="/vid/drone-shot-above-river-panning-down-showing-brisbane-cbd-expressway-motorway-a-SBV-348964395-preview.mp4" type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128] via-transparent to-transparent z-0"></div>
+                {/* Subtle dark tint over video for readability */}
+                <div className="absolute inset-0 bg-[#0A1A3A]/40 mix-blend-multiply z-0"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 z-0"></div>
 
-                <div className="max-w-7xl mx-auto w-full relative z-10 flex gap-8 items-end">
-                    {/* Image 1: Main Cityscape overlay (Optional here since we have video, let's use it as a thumbnail card) */}
+                <div className="max-w-7xl mx-auto w-full relative z-10 text-center mt-20">
                     <motion.div
-                        initial={{ opacity: 0, x: -100 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={snapSpring as any}
-                        className="hidden lg:block w-72 h-48 rounded-xl overflow-hidden border-2 border-white/20 shadow-[0_0_50px_rgba(58,134,255,0.3)] relative flex-shrink-0"
+                        initial={{ y: 30, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ ...snapSpring, delay: 0.1 } as any}
+                        className="overflow-hidden mb-6 flex justify-center"
                     >
-                        <Image src="/images/v11_metropolitan_flow_1.png" alt="Metropolis" fill className="object-cover" />
+                        <div className="bg-white/10 backdrop-blur-md border border-white/20 text-white tracking-[0.2em] font-bold text-[10px] md:text-xs uppercase px-6 py-2 rounded-full shadow-lg">
+                            Architecting Liquidity. Securing Tomorrows.
+                        </div>
                     </motion.div>
 
-                    <div>
-                        <motion.div
-                            initial={{ y: 50, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{ ...snapSpring, delay: 0.1 } as any}
-                            className="overflow-hidden mb-4"
-                        >
-                            <div className="text-[#3A86FF] tracking-[0.3em] font-bold text-sm uppercase flex items-center gap-4">
-                                <span className="w-8 h-[2px] bg-[#3A86FF]"></span>
-                                High-Velocity Capital
-                            </div>
-                        </motion.div>
-
-                        <motion.h1
-                            initial={{ y: 50, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{ ...snapSpring, delay: 0.2 } as any}
-                            className="text-6xl md:text-[8rem] font-black tracking-tighter leading-[0.85] text-white"
-                        >
-                            Metropolitan <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3A86FF] to-[#E0E5F2]">Flow.</span>
-                        </motion.h1>
-                    </div>
+                    <motion.h1
+                        initial={{ y: 50, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ ...snapSpring, delay: 0.2 } as any}
+                        className="text-6xl md:text-[8rem] font-black tracking-tighter leading-[0.9] text-white drop-shadow-2xl"
+                    >
+                        Nobel Rock <br />
+                        Partners.
+                    </motion.h1>
+                    <motion.p
+                        initial={{ y: 50, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ ...snapSpring, delay: 0.3 } as any}
+                        className="mt-8 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed drop-shadow-lg"
+                    >
+                        Institutional-grade portfolios engineered with precision, safeguarding your capital across generations.
+                    </motion.p>
                 </div>
+
+                {/* Scroll Indicator */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1, duration: 1 }}
+                    className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center"
+                >
+                    <div className="text-white/60 uppercase tracking-[0.3em] text-[9px] font-bold mb-3">Explore</div>
+                    <div className="w-[1px] h-16 bg-gradient-to-b from-white to-transparent"></div>
+                </motion.div>
             </section>
 
-            {/* SECTION 2: Image Grid Philosophy */}
-            <section className="py-32 bg-[#0A1128] relative z-20">
+            {/* SECTION 1.5: Trust Marquee */}
+            <TrustMarquee />
+
+            {/* Ticker separating Hero and Content */}
+            <MarketTicker />
+
+            {/* SECTION 2: Image Grid Philosophy (White Bg) */}
+            <section className="py-24 bg-white relative z-20">
                 <div className="max-w-7xl mx-auto px-6 lg:px-12">
                     <motion.h2
                         initial={{ x: -50, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1 }}
                         viewport={{ once: true }}
                         transition={snapSpring as any}
-                        className="text-5xl font-bold mb-16 text-white border-l-4 border-[#3A86FF] pl-6"
+                        className="text-5xl md:text-6xl font-black mb-16 text-[#0A1A3A] border-l-[6px] border-[#0A1A3A] pl-6"
                     >
-                        Architecting <br />Liquidity.
+                        The Nobel <br />Advantage.
                     </motion.h2>
 
                     <motion.div
@@ -161,26 +133,25 @@ export default function Variant11MetropolitanFlow() {
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true }}
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
                     >
-                        {/* Image 2, Image 3, Image 4 mapped to philosophy concepts */}
                         {[
-                            { img: "v11_metropolitan_flow_2.png", title: "Institutional Custody", desc: "Platinum tier security protocols." },
-                            { img: "v11_metropolitan_flow_3.png", title: "Algorithmic Spreads", desc: "Data-driven yield targeting." },
-                            { img: "v11_metropolitan_flow_4.png", title: "Fiduciary Oversight", desc: "Uncompromised alignment." }
+                            { img: "v11_assets/main_approach_vault.png", title: "Fixed-Income Supremacy", desc: "A deliberate, heavily-weighted focus on predictable debt instruments for absolute mitigation." },
+                            { img: "v11_assets/main_approach_shield.png", title: "Superannuation Defense", desc: "Strategies designed to shield and exponentially compound retirement reserves." },
+                            { img: "v11_assets/main_approach_balance.png", title: "Asymmetric Risk Management", desc: "Downside protection protocols deployed at every allocation level." }
                         ].map((card, i) => (
                             <motion.div
                                 key={i}
                                 variants={itemElastic as any}
-                                className="group cursor-pointer"
+                                className="group relative rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-white"
                             >
-                                <div className="aspect-[4/3] relative rounded-t-2xl overflow-hidden border border-[#1A2E5B] border-b-0 shadow-lg group-hover:shadow-[0_0_30px_rgba(58,134,255,0.2)] transition-shadow">
-                                    <Image src={`/images/${card.img}`} alt={card.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128] to-transparent"></div>
+                                {/* We will use the 3D assets here, but inverted or differently overlaid since they were dark. For now, placed on a light gray card top */}
+                                <div className="aspect-[16/9] relative bg-[#0A1128] overflow-hidden">
+                                    <Image src={`/${card.img}`} alt={card.title} fill className="object-cover opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
                                 </div>
-                                <div className="bg-[#101A3B] p-8 rounded-b-2xl border border-[#1A2E5B] border-t-0">
-                                    <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-[#3A86FF] transition-colors">{card.title}</h3>
-                                    <p className="text-[#899CBE]">{card.desc}</p>
+                                <div className="p-8 pb-10">
+                                    <h3 className="text-2xl font-bold text-[#0A1A3A] mb-3 group-hover:text-blue-600 transition-colors">{card.title}</h3>
+                                    <p className="text-gray-600 leading-relaxed font-medium">{card.desc}</p>
                                 </div>
                             </motion.div>
                         ))}
@@ -188,37 +159,52 @@ export default function Variant11MetropolitanFlow() {
                 </div>
             </section>
 
-            {/* SECTION 3: Deep Dive Image & Data */}
-            <section className="py-0 relative h-[80vh] flex items-center overflow-hidden">
-                {/* Image 5 (Vault) used as split-screen background */}
+            {/* SECTION 3: Deep Dive Image & Data (Corporate Navy Bg) */}
+            <section className="py-0 relative h-[80vh] flex items-center overflow-hidden bg-[#0A1A3A]">
+                {/* Image 5 (Boardroom Overlay) */}
                 <div className="absolute inset-0 w-full h-full lg:w-1/2 relative z-0">
-                    <Image src="/images/v11_metropolitan_flow_5.png" alt="Data Vault" fill className="object-cover filter contrast-125" />
-                    <div className="absolute inset-0 bg-[#0A1128]/60 lg:bg-transparent"></div>
+                    <Image src="/v11_assets/main_strategic_vision.png" alt="Boardroom Executives" fill className="object-cover opacity-80" />
+                    <div className="absolute inset-0 bg-[#0A1A3A]/40 lg:bg-transparent"></div>
                 </div>
 
                 <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-2 relative z-10 h-full">
-                    <div className="hidden lg:block"></div>
-                    <div className="flex flex-col justify-center lg:pl-16 h-full bg-gradient-to-r from-transparent via-[#0A1128]/80 to-[#0A1128]">
+                    <div className="hidden lg:block relative">
+                        {/* Hovering UI Cards */}
+                        <motion.div
+                            initial={{ y: 50, opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            transition={{ ...snapSpring, delay: 0.2 } as any}
+                            className="absolute bottom-32 right-[-20px] bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl shadow-2xl"
+                        >
+                            <div className="text-4xl font-black text-white">$1.2B+</div>
+                            <div className="text-xs text-blue-400 font-bold uppercase tracking-widest">Assets Protected</div>
+                        </motion.div>
+                    </div>
+                    <div className="flex flex-col justify-center lg:pl-16 h-full lg:bg-gradient-to-r from-transparent via-[#0A1A3A]/90 lg:via-[#0A1A3A] to-[#0A1A3A]">
                         <motion.div
                             initial={{ x: 100, opacity: 0 }}
                             whileInView={{ x: 0, opacity: 1 }}
                             viewport={{ once: true }}
                             transition={snapSpring as any}
+                            className="bg-[#0A1A3A]/90 lg:bg-transparent p-8 lg:p-0 rounded-2xl lg:rounded-none backdrop-blur-sm lg:backdrop-blur-none"
                         >
-                            <div className="text-[#3A86FF] font-mono mb-4 text-xl">SECURITY APEX</div>
-                            <h2 className="text-5xl md:text-7xl font-black mb-8 leading-none">Impenetrable <br />Structure.</h2>
-                            <p className="text-xl text-[#899CBE] mb-12 max-w-lg">
-                                We isolate your capital in heavily encrypted, ASIC-regulated custodial frameworks. Zero co-mingling. Zero systemic risk exposure.
+                            <div className="text-blue-400 font-mono mb-4 text-xl font-bold tracking-widest">CUSTODIAL STEWARDS</div>
+                            <h2 className="text-5xl md:text-7xl font-black mb-8 leading-none text-white">Architects of <br />Growth.</h2>
+                            <p className="text-lg text-gray-300 mb-6 max-w-lg leading-relaxed">
+                                We are an elite collective of market strategists and fiduciary stewards, dedicated to unlocking your financial potential. Established on rigorous mathematical modeling and unwavering ethical standards.
+                            </p>
+                            <p className="text-lg text-gray-300 mb-12 max-w-lg leading-relaxed">
+                                We do not chase trends. We structure enduring value. Our absolute priority is the defense and calculated expansion of your assets using ASIC-compliant oversight.
                             </p>
 
                             <div className="grid grid-cols-2 gap-8">
                                 <div>
                                     <div className="text-4xl font-black text-white">100%</div>
-                                    <div className="text-sm font-bold text-[#4A648C] uppercase tracking-widest">Segregated</div>
+                                    <div className="text-sm font-bold text-gray-400 uppercase tracking-widest mt-1">Unbiased Execution</div>
                                 </div>
                                 <div>
                                     <div className="text-4xl font-black text-white">Tier-1</div>
-                                    <div className="text-sm font-bold text-[#4A648C] uppercase tracking-widest">Custodians</div>
+                                    <div className="text-sm font-bold text-gray-400 uppercase tracking-widest mt-1">Custodians</div>
                                 </div>
                             </div>
                         </motion.div>
@@ -226,10 +212,11 @@ export default function Variant11MetropolitanFlow() {
                 </div>
             </section>
 
-            {/* SECTION 4: High Velocity Horizontal Nodes */}
-            <section className="py-32 bg-[#101A3B] border-y border-[#1A2E5B] overflow-hidden">
+            {/* SECTION 4: High Velocity Strategic Portfolios (White Bg) */}
+            <section className="py-32 bg-gray-50 border-y border-gray-200 overflow-hidden">
                 <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-16">
-                    <h2 className="text-4xl font-bold text-white uppercase tracking-widest">Node Allocation</h2>
+                    <h2 className="text-5xl font-black text-[#0A1A3A] mb-4 border-l-[6px] border-[#0A1A3A] pl-6">Strategic Portfolios.</h2>
+                    <p className="text-xl text-gray-600 font-medium pl-8">Engineered for absolute preservation and calculated expansion.</p>
                 </div>
 
                 <motion.div
@@ -237,94 +224,87 @@ export default function Variant11MetropolitanFlow() {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true }}
-                    className="flex gap-8 px-6 lg:px-12 w-max"
+                    className="flex flex-wrap gap-8 px-6 lg:px-12 justify-center max-w-[1600px] mx-auto"
                 >
-                    {/* Image 6, 7, 8, 9 mapped to nodes */}
                     {[
-                        { id: "NODE-A", title: "Sovereign Bonds", img: "v11_metropolitan_flow_6.png" },
-                        { id: "NODE-B", title: "Corporate Hybrid", img: "v11_metropolitan_flow_7.png" },
-                        { id: "NODE-C", title: "Blue-Chip Equity", img: "v11_metropolitan_flow_8.png" },
-                        { id: "NODE-D", title: "Cash Reserves", img: "v11_metropolitan_flow_9.png" }
+                        { id: "TIER-1", title: "The Foundation Matrix", desc: "Government & Investment-Grade Bonds. Maximum capital preservation.", img: "v11_assets/main_tier1_foundation.png" },
+                        { id: "TIER-2", title: "Balanced Yield Protocol", desc: "Corporate Bonds & Dividend Equities. Equilibrium of income and growth.", img: "v11_assets/main_tier2_balanced.png" },
+                        { id: "TIER-3", title: "The Ascendant Horizon", desc: "High-Conviction Growth Equities. Capturing maximum upside velocity.", img: "v11_assets/main_tier3_ascendant.png" }
                     ].map((node, i) => (
                         <motion.div
                             key={i}
                             variants={itemElastic as any}
-                            whileHover={{ y: -20 }}
+                            whileHover={{ y: -15 }}
                             transition={snapSpring as any}
-                            className="w-[350px] aspect-[3/4] rounded-3xl overflow-hidden relative group cursor-crosshair border border-[#1A2E5B]"
+                            className="w-full md:w-[400px] xl:w-[450px] aspect-[4/5] rounded-3xl overflow-hidden relative group cursor-crosshair shadow-2xl border-4 border-white"
                         >
-                            <Image src={`/images/${node.img}`} alt={node.title} fill className="object-cover filter opacity-50 group-hover:opacity-100 transition-opacity duration-500 group-hover:scale-110" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128] via-[#0A1128]/50 to-transparent"></div>
+                            <Image src={`/${node.img}`} alt={node.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A3A] via-[#0A1A3A]/60 to-transparent"></div>
 
-                            <div className="absolute bottom-0 left-0 p-8 w-full">
-                                <div className="bg-[#3A86FF] text-[#0A1128] inline-block px-3 py-1 font-mono text-xs font-bold mb-4">{node.id}</div>
-                                <h3 className="text-3xl font-black text-white leading-none whitespace-pre-wrap">{node.title.replace(' ', '\n')}</h3>
+                            <div className="absolute bottom-0 left-0 p-8 w-full z-10 transition-transform duration-500 group-hover:translate-y-[-10px]">
+                                <div className="bg-white text-[#0A1A3A] inline-block px-4 py-1 font-mono text-xs font-bold mb-4 rounded-full shadow-md">{node.id}</div>
+                                <h3 className="text-3xl lg:text-4xl font-black text-white leading-tight mb-4">{node.title}</h3>
+                                <p className="text-gray-200 font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">{node.desc}</p>
                             </div>
                         </motion.div>
                     ))}
                 </motion.div>
             </section>
 
-            {/* SECTION 5: The Interface (Image 10) */}
-            <section className="py-32 bg-[#0A1128]">
-                <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* SECTION 5: The Execution Protocol */}
+            <ExecutionTimeline />
 
+            {/* SECTION 5: The Profit Calculator */}
+            <InteractiveProfitCalculator />
+
+            {/* SECTION 6: Immutable Protections */}
+            <section className="py-32 bg-white relative">
+                <div className="max-w-7xl mx-auto px-6 lg:px-12">
                     <motion.div
-                        initial={{ scale: 0.9, opacity: 0 }}
-                        whileInView={{ scale: 1, opacity: 1 }}
+                        initial={{ y: 30, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
                         viewport={{ once: true }}
                         transition={snapSpring as any}
-                        className="relative rounded-3xl overflow-hidden aspect-square border-4 border-[#101A3B] shadow-[0_0_80px_rgba(58,134,255,0.15)]"
+                        className="text-center mb-20"
                     >
-                        {/* Image 10: Compass/Strategic direction */}
-                        <Image src="/images/v11_metropolitan_flow_10.png" alt="Strategic Interface" fill className="object-cover" />
+                        <h2 className="text-5xl font-black text-[#0A1A3A] mb-6">Immutable Protections.</h2>
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto font-medium leading-relaxed">
+                            Your capital remains distinctly yours. We orchestrate the strategy; Tier-1 global institutions execute the custody. Absolute transparency, absolute control.
+                        </p>
                     </motion.div>
 
-                    <div>
-                        <motion.div
-                            initial={{ x: 50, opacity: 0 }}
-                            whileInView={{ x: 0, opacity: 1 }}
-                            viewport={{ once: true }}
-                            transition={snapSpring as any}
-                        >
-                            <h2 className="text-5xl font-black text-white mb-6">Strategic Trajectory.</h2>
-                            <p className="text-xl text-[#899CBE] leading-relaxed mb-8">
-                                We don't react to the market; we model its flow. Utilizing continuous data ingestion, we adjust portfolio exposure to maintain an incredibly tight yield target range.
-                            </p>
-                            <ul className="space-y-4">
-                                {['Algorithmic curve mapping.', 'Constant spread optimization.', 'Asymmetric risk filtering.'].map((li, i) => (
-                                    <li key={i} className="flex items-center gap-4 text-white font-bold bg-[#101A3B] p-4 rounded-xl border border-[#1A2E5B]">
-                                        <span className="text-[#3A86FF]">→</span>
-                                        {li}
-                                    </li>
-                                ))}
-                            </ul>
-                        </motion.div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                        {[
+                            { title: "Segregated Accounts", desc: "Capital is held in individually named accounts with heavily regulated Tier-1 banking partners, never commingled with firm assets.", icon: "🔐" },
+                            { title: "ASIC Compliant", desc: "Operating strictly under the regulatory purview of the Australian Securities and Investments Commission for wholesale investors.", icon: "⚖️" },
+                            { title: "Real-Time Transparent", desc: "24/7 access to your custom Client Portal, displaying granular transaction data, yield accruals, and direct market exposure.", icon: "📡" }
+                        ].map((item, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ y: 50, opacity: 0 }}
+                                whileInView={{ y: 0, opacity: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ ...snapSpring, delay: i * 0.1 } as any}
+                                className="bg-gray-50 border border-gray-200 p-10 rounded-2xl hover:shadow-xl hover:border-blue-300 transition-all cursor-crosshair group"
+                            >
+                                <div className="text-5xl mb-6 grayscale group-hover:grayscale-0 transition-all">{item.icon}</div>
+                                <h3 className="text-2xl font-black text-[#0A1A3A] mb-4">{item.title}</h3>
+                                <p className="text-gray-600 leading-relaxed font-medium">{item.desc}</p>
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
             </section>
 
-            {/* SECTION 6: Signal Terminal */}
-            <section className="py-16 bg-[#050814] border-y border-[#3A86FF]/20">
-                <motion.div
-                    initial={{ scaleY: 0 }}
-                    whileInView={{ scaleY: 1 }}
-                    viewport={{ once: true }}
-                    transition={snapSpring as any}
-                    className="max-w-4xl mx-auto px-6 text-center"
-                >
-                    <h2 className="text-3xl font-bold mb-4 font-mono text-[#3A86FF] uppercase tracking-[0.2em]">Network Node Active</h2>
-                    <p className="text-lg text-[#899CBE]">Brisbane/Sydney interconnected terminal running at full capacity.</p>
-                </motion.div>
-            </section>
+            {/* SECTION 7: Due Diligence FAQs */}
+            <FaqAccordion />
 
-            {/* SECTION 7: Contact Form */}
-            <section className="py-32 bg-[#0A1128] relative overflow-hidden">
+            {/* SECTION 8: Contact Form */}
+            <section className="py-32 bg-[#0A1A3A] relative overflow-hidden">
                 {/* Abstract background sweep */}
-                <div className="absolute bottom-0 right-0 w-full h-[500px] bg-gradient-to-tl from-[#3A86FF]/10 to-transparent transform -skew-y-12 translate-y-32"></div>
+                <div className="absolute top-0 right-0 w-full h-[500px] bg-gradient-to-tl from-white/5 to-transparent transform -skew-y-12 translate-y-32"></div>
 
                 <div className="max-w-5xl mx-auto px-6 lg:px-12 relative z-10 text-center">
-
                     <motion.div
                         initial={{ y: 50, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
@@ -332,8 +312,8 @@ export default function Variant11MetropolitanFlow() {
                         transition={snapSpring as any}
                         className="mb-16"
                     >
-                        <h2 className="text-6xl font-black text-white mb-6 drop-shadow-lg">Plug into the Flow.</h2>
-                        <p className="text-2xl text-[#899CBE] max-w-2xl mx-auto">Upload your contact parameters for a preliminary systems check on your retirement capital.</p>
+                        <h2 className="text-6xl font-black text-white mb-6 drop-shadow-lg">Strategic Alignment.</h2>
+                        <p className="text-xl text-gray-300 max-w-2xl mx-auto">Upload your contact parameters for a preliminary qualitative assessment of your portfolio architecture.</p>
                     </motion.div>
 
                     <motion.form
@@ -341,23 +321,22 @@ export default function Variant11MetropolitanFlow() {
                         whileInView={{ y: 0, opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ ...snapSpring, delay: 0.2 } as any}
-                        className="bg-[#101A3B]/80 backdrop-blur-xl p-12 rounded-3xl border border-[#3A86FF]/30 shadow-2xl max-w-3xl mx-auto text-left"
+                        className="bg-white/10 backdrop-blur-xl p-12 rounded-3xl border border-white/20 shadow-2xl max-w-3xl mx-auto text-left"
                     >
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                             <div>
-                                <label className="block text-xs font-bold tracking-widest text-[#4A648C] uppercase mb-4">Identity String</label>
-                                <input type="text" className="w-full bg-[#050814] border-b-2 border-[#1A2E5B] text-white p-4 focus:border-[#3A86FF] outline-none transition-colors font-mono" placeholder="NAME / ENTITY" />
+                                <label className="block text-xs font-bold tracking-widest text-blue-300 uppercase mb-4">Identity String</label>
+                                <input type="text" className="w-full bg-[#0A1A3A] border border-white/20 text-white rounded-lg p-4 focus:border-blue-400 focus:ring-1 focus:ring-blue-400 outline-none transition-all font-mono" placeholder="NAME / ENTITY" />
                             </div>
                             <div>
-                                <label className="block text-xs font-bold tracking-widest text-[#4A648C] uppercase mb-4">Comms Channel</label>
-                                <input type="email" className="w-full bg-[#050814] border-b-2 border-[#1A2E5B] text-white p-4 focus:border-[#3A86FF] outline-none transition-colors font-mono" placeholder="EMAIL ADDRESS" />
+                                <label className="block text-xs font-bold tracking-widest text-blue-300 uppercase mb-4">Comms Channel</label>
+                                <input type="email" className="w-full bg-[#0A1A3A] border border-white/20 text-white rounded-lg p-4 focus:border-blue-400 focus:ring-1 focus:ring-blue-400 outline-none transition-all font-mono" placeholder="EMAIL ADDRESS" />
                             </div>
                         </div>
-                        <button className="w-full bg-[#3A86FF] text-white font-black uppercase tracking-[0.2em] p-6 rounded-xl hover:bg-[#2A75E6] hover:shadow-[0_0_40px_rgba(58,134,255,0.4)] transition-all">
+                        <button className="w-full bg-white text-[#0A1A3A] font-black uppercase tracking-[0.2em] p-6 rounded-xl hover:bg-gray-200 hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all">
                             Initialize Transmission
                         </button>
                     </motion.form>
-
                 </div>
             </section>
 

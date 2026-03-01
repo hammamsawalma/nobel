@@ -5,20 +5,8 @@ import { motion, Variants } from 'framer-motion';
 
 export default function NavigatorPage() {
   const variantsData = [
-    { id: 1, title: "Coastal Wealth", path: "/variant-1", desc: "Sydney/Gold Coast vibes, bright & airy." },
-    { id: 2, title: "Botanical Growth", path: "/variant-2", desc: "Organic, eucalyptus greens, sustainable." },
-    { id: 3, title: "Sydney Skyline Aerial", path: "/variant-3", desc: "Bold typography video mask." },
-    { id: 4, title: "Harbour Momentum", path: "/variant-4", desc: "Split-screen sticky video layout." },
-    { id: 5, title: "North Sydney Elevation", path: "/variant-5", desc: "Deep parallax frosted glass cards." },
-    { id: 6, title: "Kinetic Gold", path: "/variant-6", desc: "Luxurious horizontal scrolling." },
-    { id: 9, title: "Outback Horizon", path: "/variant-9", desc: "High-velocity elastic slides, terracotta." },
-    { id: 11, title: "Metropolitan Flow", path: "/variant-11", desc: "Deep Cobalt & Platinum Silver, fluidity." },
-    { id: 12, title: "Structural Capital", path: "/variant-12", desc: "Brutalist Grey, White, and Black geometry." },
-    { id: 13, title: "Western Horizon", path: "/variant-13", desc: "Parallax Gold & Deep Violet, opulent." },
-    { id: 14, title: "Tactile Liquidity", path: "/variant-14", desc: "Noir Emerald, physical capital weight." },
+    { id: 11, title: "Nobel Private Wealth", path: "/variant-11", desc: "Institutional grade." },
     { id: 15, title: "Twilight Yield", path: "/variant-15", desc: "Indigo Glassmorphism, high velocity." },
-    { id: 16, title: "Institutional Guard", path: "/variant-16", desc: "Supreme Authority, Navy & Light Gold." },
-    { id: 17, title: "Yield Architecture", path: "/variant-17", desc: "Modern algorithmic structure, sharp glass." },
   ];
 
   const containerVariants: Variants = {
@@ -48,7 +36,7 @@ export default function NavigatorPage() {
             Nobel Aesthetic Catalog
           </div>
           <h1 className="text-4xl md:text-6xl font-light tracking-tight mb-6">
-            The <span className="font-serif italic text-yellow-500">14 Variants</span>
+            The <span className="font-serif italic text-yellow-500">2 Variants</span>
           </h1>
           <p className="text-xl text-slate-400 font-light max-w-2xl mx-auto">
             A curated showcase of high-end, animated UI architectures designed for Australian wealth management.

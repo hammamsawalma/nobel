@@ -17,11 +17,8 @@ export function Header() {
     { name: "Wealth Management", href: "/wealth-management" },
     { name: "Retirement Planning", href: "/retirement-planning" },
     { name: "About Us", href: "/about" },
-    // Theme Variants Dropdown / Links dynamically generated
-    ...Array.from({ length: 10 }, (_, i) => ({
-      name: `V${i + 1}`,
-      href: `/variant-${i === 0 ? 'coastal' : i === 1 ? 'botanical' : i + 1}`
-    }))
+    { name: "V11 (Main)", href: "/variant-11" },
+    { name: "V15 (Plan B)", href: "/variant-15" }
   ];
 
   if (!mounted) return null;
