@@ -16,7 +16,7 @@ export default function EquitiesPage() {
             <V11Header />
 
             {/* HERO */}
-            <section className="relative h-[60vh] flex flex-col justify-end pb-16 px-6 lg:px-12 overflow-hidden border-b-[8px] border-blue-600">
+            <section className="relative min-h-[60vh] md:h-[60vh] flex flex-col justify-end pb-12 md:pb-16 px-6 lg:px-12 overflow-hidden border-b-[6px] md:border-b-[8px] border-blue-600">
                 <video
                     autoPlay loop muted playsInline
                     className="absolute inset-0 w-full h-full object-cover z-0"
@@ -33,7 +33,7 @@ export default function EquitiesPage() {
                                 Growth Engine
                             </div>
                         </motion.div>
-                        <motion.h1 initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ ...snapSpring, delay: 0.1 } as any} className="text-5xl md:text-7xl font-black tracking-tighter leading-[0.85] text-white">
+                        <motion.h1 initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ ...snapSpring, delay: 0.1 } as any} className="text-4xl md:text-7xl font-black tracking-tighter leading-[0.85] text-white">
                             The Architecture of <br />
                             Outperformance.
                         </motion.h1>
@@ -42,14 +42,14 @@ export default function EquitiesPage() {
             </section>
 
             {/* SECTION 2: THE MECHANISM */}
-            <section className="py-24 bg-[#0A1A3A]">
+            <section className="py-16 md:py-24 bg-[#0A1A3A]">
                 <div className="max-w-4xl mx-auto px-6 text-center">
                     <motion.h2
                         initial={{ y: 30, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         viewport={{ once: true }}
                         transition={snapSpring as any}
-                        className="text-4xl font-black text-white mb-8"
+                        className="text-3xl md:text-4xl font-black text-white mb-6 md:mb-8"
                     >
                         Calculated Velocity.
                     </motion.h2>
@@ -58,7 +58,7 @@ export default function EquitiesPage() {
                         whileInView={{ y: 0, opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ ...snapSpring, delay: 0.1 } as any}
-                        className="text-gray-300 text-xl leading-relaxed font-medium"
+                        className="text-gray-300 text-lg md:text-xl leading-relaxed font-medium"
                     >
                         To merely preserve capital is entirely insufficient in an inflationary environment. Our equity deployment strategy focuses relentlessly on businesses exhibiting monopolistic tendencies, impenetrable balance sheets, and ruthless operational efficiency. This is where your wealth scales aggressively.
                     </motion.p>
@@ -66,10 +66,10 @@ export default function EquitiesPage() {
             </section>
 
             {/* CORE ALLOCATIONS */}
-            <section className="py-24 bg-white border-y border-gray-100">
+            <section className="py-16 md:py-24 bg-white border-y border-gray-100">
                 <div className="max-w-7xl mx-auto px-6 lg:px-12">
-                    <h2 className="text-5xl font-black text-[#0A1A3A] mb-16 border-l-[6px] border-[#0A1A3A] pl-6">Sector Dominance.</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <h2 className="text-4xl md:text-5xl font-black text-[#0A1A3A] mb-12 md:mb-16 border-l-[4px] md:border-l-[6px] border-[#0A1A3A] pl-4 md:pl-6">Sector Dominance.</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
                         {[
                             { title: "Domestic Titans", desc: "Anchoring your portfolio with ASX top-tier entities. Concentrated exposure to the financial structures and resource logistics that power the Australian economy.", img: "equities_domestic_titans.png" },
                             { title: "Global Technology Infrastructure", desc: "Capitalizing on the digital monopolies mapping our future. Heavy exposure to AI computation, cloud infrastructure, and global FinTech networks.", img: "equities_global_tech.png" },
@@ -79,9 +79,9 @@ export default function EquitiesPage() {
                                 <div className="aspect-[4/3] relative overflow-hidden bg-[#0A1A3A] border-b-4 border-[#0A1A3A]">
                                     <Image src={`/v11_assets/${alloc.img}`} alt={alloc.title} fill className="object-cover filter opacity-70 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
                                 </div>
-                                <div className="p-8">
-                                    <h3 className="text-3xl font-black text-[#0A1A3A] mb-4 group-hover:text-blue-600 transition-colors">{alloc.title}</h3>
-                                    <p className="text-gray-600 leading-relaxed font-medium">{alloc.desc}</p>
+                                <div className="p-6 md:p-8">
+                                    <h3 className="text-2xl md:text-3xl font-black text-[#0A1A3A] mb-4 group-hover:text-blue-600 transition-colors">{alloc.title}</h3>
+                                    <p className="text-sm md:text-base text-gray-600 leading-relaxed font-medium">{alloc.desc}</p>
                                 </div>
                             </motion.div>
                         ))}
@@ -93,13 +93,13 @@ export default function EquitiesPage() {
             <AssetAllocationSandbox />
 
             {/* CTA */}
-            <section className="py-24 bg-gray-50 border-t border-gray-200 text-center">
+            <section className="py-16 md:py-24 bg-gray-50 border-t border-gray-200 text-center">
                 <div className="max-w-4xl mx-auto px-6">
-                    <h2 className="text-4xl md:text-5xl font-black text-[#0A1A3A] mb-6">Take Command of Your Growth.</h2>
-                    <p className="text-xl text-gray-500 mb-10 max-w-2xl mx-auto">
+                    <h2 className="text-3xl md:text-5xl font-black text-[#0A1A3A] mb-4 md:mb-6">Take Command of Your Growth.</h2>
+                    <p className="text-lg md:text-xl text-gray-500 mb-8 md:mb-10 max-w-2xl mx-auto">
                         Speak with our equity analysts to determine how your portfolio can capture monopolistic market share.
                     </p>
-                    <Link href="#contact" className="inline-block bg-[#0A1A3A] hover:bg-[#1A2A4A] text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-sm transition-colors shadow-2xl">
+                    <Link href="#contact" className="inline-block bg-[#0A1A3A] hover:bg-[#1A2A4A] text-white px-8 py-4 md:px-10 md:py-5 rounded-full font-black uppercase tracking-widest text-xs md:text-sm transition-colors shadow-2xl">
                         Request Advisory Node Access
                     </Link>
                 </div>

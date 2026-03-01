@@ -60,11 +60,11 @@ export default function InteractiveProfitCalculator() {
     const maxChartValue = Math.max(...chartData, 1); // Avoid division by zero
 
     return (
-        <section className="py-24 bg-[#0A1A3A] border-y border-[#1A2A4A] relative overflow-hidden">
+        <section className="py-16 md:py-24 bg-[#0A1A3A] border-y border-[#1A2A4A] relative overflow-hidden">
             {/* Background Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/20 rounded-full blur-[120px] pointer-events-none z-0"></div>
 
-            <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 relative z-10">
+            <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 relative z-10">
 
                 {/* Left Side: The Interactive Chart */}
                 <div className="lg:col-span-7 flex flex-col justify-center">
@@ -74,14 +74,14 @@ export default function InteractiveProfitCalculator() {
                         viewport={{ once: true }}
                         className="mb-12"
                     >
-                        <h2 className="text-4xl md:text-5xl font-black text-white mb-4">Project Your Trajectory.</h2>
-                        <p className="text-xl text-gray-300 max-w-xl">
+                        <h2 className="text-3xl md:text-5xl font-black text-white mb-3 md:mb-4">Project Your Trajectory.</h2>
+                        <p className="text-lg md:text-xl text-gray-300 max-w-xl">
                             Visualize the power of algorithmic compounding. Adjust the parameters to model your potential capital expansion.
                         </p>
                     </motion.div>
 
                     {/* Dynamic Bar Chart Visualization */}
-                    <div className="h-64 flex items-end gap-2 md:gap-4 w-full pr-4 md:pr-12">
+                    <div className="h-48 md:h-64 flex items-end gap-2 md:gap-4 w-full pr-4 md:pr-12">
                         {chartData.map((val, idx) => {
                             const heightPercentage = (val / maxChartValue) * 100;
                             return (
@@ -109,11 +109,11 @@ export default function InteractiveProfitCalculator() {
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    className="lg:col-span-5 bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-2xl"
+                    className="lg:col-span-5 bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-6 md:p-8 shadow-2xl"
                 >
-                    <div className="mb-8">
+                    <div className="mb-6 md:mb-8">
                         <div className="text-sm font-bold text-blue-400 uppercase tracking-widest mb-2 mt-2">Projected Value</div>
-                        <div className="text-5xl md:text-6xl font-black text-white">{formatCurrency(projectedValue)}</div>
+                        <div className="text-4xl md:text-6xl font-black text-white">{formatCurrency(projectedValue)}</div>
                         <div className="text-sm font-medium text-gray-400 mt-2">
                             Total Yield Generated: <span className="text-green-400">{formatCurrency(totalInterest)}</span>
                         </div>

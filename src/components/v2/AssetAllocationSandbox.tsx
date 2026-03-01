@@ -40,8 +40,8 @@ export default function AssetAllocationSandbox() {
     const currentProfile = RISK_PROFILES[sliderValue];
 
     return (
-        <section className="py-32 bg-[#0A1A3A] text-white relative overflow-hidden">
-            <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <section className="py-20 md:py-32 bg-[#0A1A3A] text-white relative overflow-hidden">
+            <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 flex flex-col lg:grid lg:grid-cols-2 gap-10 md:gap-8 lg:gap-16 items-center">
 
                 {/* Text Block */}
                 <motion.div
@@ -51,9 +51,9 @@ export default function AssetAllocationSandbox() {
                     transition={{ duration: 0.8 }}
                     className="order-1 lg:col-start-1 lg:row-start-1 self-end"
                 >
-                    <div className="text-blue-400 font-bold uppercase tracking-widest text-sm mb-4">Interactive Matrix</div>
-                    <h2 className="text-5xl font-black mb-6">Dynamic Allocation Simulator.</h2>
-                    <p className="text-gray-300 mb-0 lg:mb-12 text-lg max-w-lg leading-relaxed">
+                    <div className="text-blue-400 font-bold uppercase tracking-widest text-xs md:text-sm mb-3 md:mb-4">Interactive Matrix</div>
+                    <h2 className="text-4xl md:text-5xl font-black mb-4 md:mb-6">Dynamic Allocation Simulator.</h2>
+                    <p className="text-gray-300 mb-0 lg:mb-12 text-base md:text-lg max-w-lg leading-relaxed">
                         Slide the control matrix to visualize how Nobel Rock dynamically recalibrates absolute asset allocation in real-time to match your exact risk-to-reward architecture.
                     </p>
                 </motion.div>

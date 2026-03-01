@@ -31,11 +31,11 @@ export default function FaqAccordion() {
     };
 
     return (
-        <section className="py-24 bg-white border-y border-gray-100">
+        <section className="py-16 md:py-24 bg-white border-y border-gray-100">
             <div className="max-w-4xl mx-auto px-6">
-                <div className="mb-16">
-                    <h2 className="text-4xl md:text-5xl font-black text-[#0A1A3A] mb-4 border-l-[6px] border-blue-600 pl-6">Deep Due Diligence.</h2>
-                    <p className="text-xl text-gray-500 font-medium pl-8">Operational transparency is our foremost prerequisite.</p>
+                <div className="mb-12 md:mb-16">
+                    <h2 className="text-3xl md:text-5xl font-black text-[#0A1A3A] mb-4 border-l-[4px] md:border-l-[6px] border-blue-600 pl-4 md:pl-6">Deep Due Diligence.</h2>
+                    <p className="text-lg md:text-xl text-gray-500 font-medium pl-6 md:pl-8">Operational transparency is our foremost prerequisite.</p>
                 </div>
 
                 <div className="space-y-4">

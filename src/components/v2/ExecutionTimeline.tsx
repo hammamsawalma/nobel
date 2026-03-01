@@ -43,7 +43,7 @@ export default function ExecutionTimeline() {
     };
 
     return (
-        <section className="py-32 bg-white relative overflow-hidden border-y border-gray-200">
+        <section className="py-20 md:py-32 bg-white relative overflow-hidden border-y border-gray-200">
             {/* Background Accent */}
             <div className="absolute left-0 top-0 w-1/3 h-full bg-gradient-to-r from-gray-50 to-transparent"></div>
 
@@ -52,14 +52,14 @@ export default function ExecutionTimeline() {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mb-20 grid grid-cols-1 md:grid-cols-2 gap-8 items-end"
+                    className="mb-12 md:mb-20 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-end"
                 >
                     <div>
-                        <div className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-4">Onboarding Architecture</div>
-                        <h2 className="text-5xl lg:text-6xl font-black text-[#0A1A3A] leading-tight">The Execution <br />Protocol.</h2>
+                        <div className="text-blue-600 font-bold uppercase tracking-widest text-xs md:text-sm mb-3 md:mb-4">Onboarding Architecture</div>
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0A1A3A] leading-tight">The Execution <br />Protocol.</h2>
                     </div>
                     <div>
-                        <p className="text-lg text-gray-600 leading-relaxed font-medium max-w-lg">
+                        <p className="text-base md:text-lg text-gray-600 leading-relaxed font-medium max-w-lg">
                             We have engineered a frictionless, highly transparent onboarding sequence designed to deploy your capital with precision while maintaining paramount operational security.
                         </p>
                     </div>
@@ -79,7 +79,7 @@ export default function ExecutionTimeline() {
                         <motion.div
                             key={index}
                             variants={itemVariants as any}
-                            className={`relative flex flex-col md:flex-row items-start md:items-center justify-between mb-16 last:mb-0 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                            className={`relative flex flex-col md:flex-row items-start md:items-center justify-between mb-12 md:mb-16 last:mb-0 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                                 }`}
                         >
                             <div className="w-full md:w-5/12 hidden md:block"></div>
@@ -90,13 +90,13 @@ export default function ExecutionTimeline() {
                             </div>
 
                             {/* Content Card */}
-                            <div className={`w-full md:w-5/12 pl-28 md:pl-0 ${index % 2 === 0 ? "md:pr-16 text-left md:text-right" : "md:pl-16 text-left"
+                            <div className={`w-full md:w-5/12 pl-24 md:pl-0 mt-6 md:mt-0 ${index % 2 === 0 ? "md:pr-16 text-left md:text-right" : "md:pl-16 text-left"
                                 }`}>
-                                <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition-shadow duration-300 relative group overflow-hidden">
+                                <div className="bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition-shadow duration-300 relative group overflow-hidden">
                                     <div className="absolute inset-0 bg-blue-600 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 ease-in-out opacity-5"></div>
                                     <div className="text-[#0A1A3A] font-bold text-xs uppercase tracking-widest mb-3 opacity-50">Step 0{index + 1}</div>
-                                    <h3 className="text-2xl font-black text-[#0A1A3A] mb-4 group-hover:text-blue-600 transition-colors">{step.title}</h3>
-                                    <p className="text-gray-600 font-medium leading-relaxed">{step.description}</p>
+                                    <h3 className="text-xl md:text-2xl font-black text-[#0A1A3A] mb-3 md:mb-4 group-hover:text-blue-600 transition-colors">{step.title}</h3>
+                                    <p className="text-sm md:text-base text-gray-600 font-medium leading-relaxed">{step.description}</p>
                                 </div>
                             </div>
                         </motion.div>

@@ -82,7 +82,7 @@ export default function Variant11NobelWealth() {
                         initial={{ y: 50, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ ...snapSpring, delay: 0.2 } as any}
-                        className="text-6xl md:text-[8rem] font-black tracking-tighter leading-[0.9] text-white drop-shadow-2xl"
+                        className="text-5xl md:text-[8rem] font-black tracking-tighter leading-[0.9] text-white drop-shadow-2xl"
                     >
                         Nobel Rock <br />
                         Partners.
@@ -116,14 +116,14 @@ export default function Variant11NobelWealth() {
             <MarketTicker />
 
             {/* SECTION 2: Image Grid Philosophy (White Bg) */}
-            <section className="py-24 bg-white relative z-20">
+            <section className="py-16 md:py-24 bg-white relative z-20">
                 <div className="max-w-7xl mx-auto px-6 lg:px-12">
                     <motion.h2
                         initial={{ x: -50, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1 }}
                         viewport={{ once: true }}
                         transition={snapSpring as any}
-                        className="text-5xl md:text-6xl font-black mb-16 text-[#0A1A3A] border-l-[6px] border-[#0A1A3A] pl-6"
+                        className="text-4xl md:text-6xl font-black mb-12 md:mb-16 text-[#0A1A3A] border-l-[6px] border-[#0A1A3A] pl-6"
                     >
                         The Nobel <br />Advantage.
                     </motion.h2>
@@ -160,9 +160,9 @@ export default function Variant11NobelWealth() {
             </section>
 
             {/* SECTION 3: Deep Dive Image & Data (Corporate Navy Bg) */}
-            <section className="py-0 relative h-[80vh] flex items-center overflow-hidden bg-[#0A1A3A]">
+            <section className="py-20 lg:py-0 relative min-h-[80vh] lg:h-[80vh] flex items-center overflow-hidden bg-[#0A1A3A]">
                 {/* Image 5 (Boardroom Overlay) */}
-                <div className="absolute inset-0 w-full h-full lg:w-1/2 relative z-0">
+                <div className="absolute inset-0 w-full h-[50%] lg:h-full lg:w-1/2 relative z-0">
                     <Image src="/v11_assets/main_strategic_vision.png" alt="Boardroom Executives" fill className="object-cover opacity-80" />
                     <div className="absolute inset-0 bg-[#0A1A3A]/40 lg:bg-transparent"></div>
                 </div>
@@ -189,15 +189,15 @@ export default function Variant11NobelWealth() {
                             className="bg-[#0A1A3A]/90 lg:bg-transparent p-8 lg:p-0 rounded-2xl lg:rounded-none backdrop-blur-sm lg:backdrop-blur-none"
                         >
                             <div className="text-blue-400 font-mono mb-4 text-xl font-bold tracking-widest">CUSTODIAL STEWARDS</div>
-                            <h2 className="text-5xl md:text-7xl font-black mb-8 leading-none text-white">Architects of <br />Growth.</h2>
-                            <p className="text-lg text-gray-300 mb-6 max-w-lg leading-relaxed">
+                            <h2 className="text-4xl md:text-7xl font-black mb-8 leading-none text-white">Architects of <br />Growth.</h2>
+                            <p className="text-base md:text-lg text-gray-300 mb-6 max-w-lg leading-relaxed">
                                 We are an elite collective of market strategists and fiduciary stewards, dedicated to unlocking your financial potential. Established on rigorous mathematical modeling and unwavering ethical standards.
                             </p>
                             <p className="text-lg text-gray-300 mb-12 max-w-lg leading-relaxed">
                                 We do not chase trends. We structure enduring value. Our absolute priority is the defense and calculated expansion of your assets using ASIC-compliant oversight.
                             </p>
 
-                            <div className="grid grid-cols-2 gap-8">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                                 <div>
                                     <div className="text-4xl font-black text-white">100%</div>
                                     <div className="text-sm font-bold text-gray-400 uppercase tracking-widest mt-1">Unbiased Execution</div>
@@ -213,10 +213,10 @@ export default function Variant11NobelWealth() {
             </section>
 
             {/* SECTION 4: High Velocity Strategic Portfolios (White Bg) */}
-            <section className="py-32 bg-gray-50 border-y border-gray-200 overflow-hidden">
-                <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-16">
-                    <h2 className="text-5xl font-black text-[#0A1A3A] mb-4 border-l-[6px] border-[#0A1A3A] pl-6">Strategic Portfolios.</h2>
-                    <p className="text-xl text-gray-600 font-medium pl-8">Engineered for absolute preservation and calculated expansion.</p>
+            <section className="py-20 md:py-32 bg-gray-50 border-y border-gray-200 overflow-hidden">
+                <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-12 md:mb-16">
+                    <h2 className="text-4xl md:text-5xl font-black text-[#0A1A3A] mb-4 border-l-[6px] border-[#0A1A3A] pl-4 md:pl-6">Strategic Portfolios.</h2>
+                    <p className="text-lg md:text-xl text-gray-600 font-medium pl-6 md:pl-8">Engineered for absolute preservation and calculated expansion.</p>
                 </div>
 
                 <motion.div
@@ -258,17 +258,17 @@ export default function Variant11NobelWealth() {
             <InteractiveProfitCalculator />
 
             {/* SECTION 6: Immutable Protections */}
-            <section className="py-32 bg-white relative">
+            <section className="py-20 md:py-32 bg-white relative">
                 <div className="max-w-7xl mx-auto px-6 lg:px-12">
                     <motion.div
                         initial={{ y: 30, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         viewport={{ once: true }}
                         transition={snapSpring as any}
-                        className="text-center mb-20"
+                        className="text-center mb-16 md:mb-20"
                     >
-                        <h2 className="text-5xl font-black text-[#0A1A3A] mb-6">Immutable Protections.</h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto font-medium leading-relaxed">
+                        <h2 className="text-4xl md:text-5xl font-black text-[#0A1A3A] mb-6">Immutable Protections.</h2>
+                        <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-medium leading-relaxed">
                             Your capital remains distinctly yours. We orchestrate the strategy; Tier-1 global institutions execute the custody. Absolute transparency, absolute control.
                         </p>
                     </motion.div>
@@ -300,7 +300,7 @@ export default function Variant11NobelWealth() {
             <FaqAccordion />
 
             {/* SECTION 8: Contact Form */}
-            <section className="py-32 bg-[#0A1A3A] relative overflow-hidden">
+            <section className="py-20 md:py-32 bg-[#0A1A3A] relative overflow-hidden">
                 {/* Abstract background sweep */}
                 <div className="absolute top-0 right-0 w-full h-[500px] bg-gradient-to-tl from-white/5 to-transparent transform -skew-y-12 translate-y-32"></div>
 
@@ -310,10 +310,10 @@ export default function Variant11NobelWealth() {
                         whileInView={{ y: 0, opacity: 1 }}
                         viewport={{ once: true }}
                         transition={snapSpring as any}
-                        className="mb-16"
+                        className="mb-12 md:mb-16"
                     >
-                        <h2 className="text-6xl font-black text-white mb-6 drop-shadow-lg">Strategic Alignment.</h2>
-                        <p className="text-xl text-gray-300 max-w-2xl mx-auto">Upload your contact parameters for a preliminary qualitative assessment of your portfolio architecture.</p>
+                        <h2 className="text-4xl md:text-6xl font-black text-white mb-6 drop-shadow-lg leading-tight md:leading-normal">Strategic <br className="md:hidden" />Alignment.</h2>
+                        <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">Upload your contact parameters for a preliminary qualitative assessment of your portfolio architecture.</p>
                     </motion.div>
 
                     <motion.form
