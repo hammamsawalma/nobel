@@ -133,7 +133,7 @@ export default function Variant11NobelWealth() {
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true }}
-                        className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 overflow-x-auto snap-x snap-mandatory pb-8 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden"
+                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10"
                     >
                         {[
                             { img: "v11_assets/main_approach_vault.png", title: "Fixed-Income Supremacy", desc: "A deliberate, heavily-weighted focus on predictable debt instruments for absolute mitigation." },
@@ -143,7 +143,7 @@ export default function Variant11NobelWealth() {
                             <motion.div
                                 key={i}
                                 variants={itemElastic as any}
-                                className="group relative rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-white min-w-[85vw] md:min-w-0 shrink-0 snap-center"
+                                className="group relative rounded-[2rem] overflow-hidden shadow-xl shadow-gray-200/50 border border-gray-100 bg-white"
                             >
                                 {/* We will use the 3D assets here, but inverted or differently overlaid since they were dark. For now, placed on a light gray card top */}
                                 <div className="aspect-[16/9] relative bg-[#0A1128] overflow-hidden">
@@ -221,7 +221,7 @@ export default function Variant11NobelWealth() {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true }}
-                    className="flex md:flex-wrap gap-6 md:gap-8 px-6 lg:px-12 md:justify-center max-w-[1600px] mx-auto overflow-x-auto snap-x snap-mandatory pb-8 md:pb-0 [&::-webkit-scrollbar]:hidden"
+                    className="grid grid-cols-1 md:flex md:flex-wrap gap-8 md:gap-8 px-6 lg:px-12 md:justify-center max-w-[1600px] mx-auto"
                 >
                     {[
                         { id: "TIER-1", title: "The Foundation Matrix", desc: "Government & Investment-Grade Bonds. Maximum capital preservation.", img: "v11_assets/main_tier1_foundation.png" },
@@ -231,17 +231,17 @@ export default function Variant11NobelWealth() {
                         <motion.div
                             key={i}
                             variants={itemElastic as any}
-                            whileHover={{ y: -15 }}
+                            whileHover={{ y: -10 }}
                             transition={snapSpring as any}
-                            className="w-[85vw] md:w-[400px] xl:w-[450px] shrink-0 snap-center aspect-[4/5] rounded-3xl overflow-hidden relative group cursor-crosshair shadow-2xl border-4 border-white"
+                            className="w-full md:w-[400px] xl:w-[450px] aspect-[4/5] object-cover rounded-[2rem] overflow-hidden relative group cursor-crosshair shadow-2xl border border-white/20"
                         >
                             <Image src={`/${node.img}`} alt={node.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A3A] via-[#0A1A3A]/60 to-transparent"></div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A3A] via-[#0A1A3A]/80 md:via-[#0A1A3A]/60 to-transparent"></div>
 
-                            <div className="absolute bottom-0 left-0 p-6 md:p-8 w-full z-10 transition-transform duration-500 group-hover:translate-y-[-10px]">
+                            <div className="absolute bottom-0 left-0 p-6 md:p-8 w-full z-10 transition-transform duration-500 md:group-hover:translate-y-[-10px]">
                                 <div className="bg-white text-[#0A1A3A] inline-block px-3 py-1 md:px-4 md:py-1 font-mono text-[10px] md:text-xs font-bold mb-3 md:mb-4 rounded-full shadow-md">{node.id}</div>
-                                <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-white leading-tight mb-2 md:mb-4">{node.title}</h3>
-                                <p className="text-sm md:text-base text-gray-200 font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">{node.desc}</p>
+                                <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-white leading-tight mb-2 md:mb-4 drop-shadow-md">{node.title}</h3>
+                                <p className="text-sm md:text-base text-gray-200 font-medium leading-relaxed opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100 drop-shadow-md">{node.desc}</p>
                             </div>
                         </motion.div>
                     ))}
