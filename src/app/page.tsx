@@ -68,13 +68,17 @@ export default function Variant11NobelWealth() {
 
                 <div className="max-w-7xl mx-auto w-full relative z-10 text-center mt-12 md:mt-20">
                     <motion.div
-                        initial={{ y: 30, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
                         transition={{ ...snapSpring, delay: 0.1 } as any}
-                        className="overflow-hidden mb-6 flex justify-center"
+                        className="mb-6 md:mb-8 flex justify-center"
                     >
-                        <div className="bg-white/10 backdrop-blur-md border border-white/20 text-white tracking-[0.2em] font-bold text-[9px] md:text-xs uppercase px-4 md:px-6 py-2 rounded-full shadow-lg">
-                            Architecting Liquidity. Securing Tomorrows.
+                        <div className="bg-gradient-to-r from-amber-700/30 to-yellow-600/30 border border-amber-400/40 backdrop-blur-md px-5 md:px-8 py-2 md:py-3 rounded-full flex items-center gap-3 md:gap-4 shadow-[0_0_40px_rgba(245,158,11,0.3)] hover:shadow-[0_0_60px_rgba(245,158,11,0.5)] transition-all cursor-default">
+                            <span className="text-amber-400 text-[10px] md:text-sm">✦</span>
+                            <span className="text-amber-50 font-black uppercase tracking-[0.2em] md:tracking-[0.3em] text-[9px] md:text-xs drop-shadow-md">
+                                25 Years of Absolute Preservation
+                            </span>
+                            <span className="text-amber-400 text-[10px] md:text-sm">✦</span>
                         </div>
                     </motion.div>
 
