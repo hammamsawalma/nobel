@@ -3,9 +3,8 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-
-import V11Header from "@/components/v11/Header";
-import V11Footer from "@/components/v11/Footer";
+import V11Header from "@/components/v2/Header";
+import V11Footer from "@/components/v2/Footer";
 
 export default function WhoWeArePage() {
     const snapSpring = { type: "spring", stiffness: 300, damping: 20, mass: 0.8 };

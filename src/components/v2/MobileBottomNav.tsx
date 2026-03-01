@@ -11,10 +11,10 @@ export default function MobileBottomNav() {
     const [isPortalOpen, setIsPortalOpen] = useState(false);
 
     const navItems = [
-        { name: "Home", href: "/variant-11", icon: <Home className="w-5 h-5" />, exact: true },
-        { name: "Yield", href: "/variant-11/fixed-income", icon: <BarChart3 className="w-5 h-5" /> },
-        { name: "Equities", href: "/variant-11/equities", icon: <TrendingUp className="w-5 h-5" /> },
-        { name: "Firm", href: "/variant-11/who-we-are", icon: <Building2 className="w-5 h-5" /> },
+        { name: "Home", href: "/", icon: <Home className="w-5 h-5" />, exact: true },
+        { name: "Yield", href: "/fixed-income", icon: <BarChart3 className="w-5 h-5" /> },
+        { name: "Equities", href: "/equities", icon: <TrendingUp className="w-5 h-5" /> },
+        { name: "Firm", href: "/who-we-are", icon: <Building2 className="w-5 h-5" /> },
     ];
 
     return (

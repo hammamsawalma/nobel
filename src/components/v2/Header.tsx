@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import ClientPortalModal from '@/components/v11/ClientPortalModal';
+import ClientPortalModal from '@/components/v2/ClientPortalModal';
 
 export default function V11Header() {
     const [isPortalOpen, setIsPortalOpen] = useState(false);
@@ -10,14 +10,14 @@ export default function V11Header() {
         <div className="fixed top-0 md:top-6 left-0 w-full z-50 flex justify-center md:px-8">
             <header className="w-full max-w-7xl bg-white/95 backdrop-blur-lg md:shadow-[0_8px_30px_rgb(0,0,0,0.08)] md:rounded-full px-6 py-4 md:px-8 md:py-4 flex justify-between items-center text-[#0A1A3A] border-b md:border border-gray-100">
                 <div className="font-black text-2xl tracking-tighter cursor-pointer">
-                    <Link href="/variant-11">
+                    <Link href="/">
                         NOBEL <span className="text-gray-400 font-light">| WEALTH</span>
                     </Link>
                 </div>
                 <nav className="hidden md:flex gap-8 text-sm font-bold tracking-widest uppercase text-gray-500">
-                    <Link href="/variant-11/fixed-income" className="hover:text-[#0A1A3A] transition-colors">Yield Matrix</Link>
-                    <Link href="/variant-11/who-we-are" className="hover:text-[#0A1A3A] transition-colors">Custodial Tech</Link>
-                    <Link href="/variant-11/equities" className="hover:text-[#0A1A3A] transition-colors">Advisory Node</Link>
+                    <Link href="/fixed-income" className="hover:text-[#0A1A3A] transition-colors">Yield Matrix</Link>
+                    <Link href="/who-we-are" className="hover:text-[#0A1A3A] transition-colors">Custodial Tech</Link>
+                    <Link href="/equities" className="hover:text-[#0A1A3A] transition-colors">Advisory Node</Link>
                 </nav>
                 <div className="flex items-center gap-4">
                     <button

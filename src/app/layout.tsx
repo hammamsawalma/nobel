@@ -1,30 +1,16 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { ReactNode } from "react";
+import { LenisProvider } from "@/components/v2/LenisProvider";
+import AIChatWidget from "@/components/v2/AIChatWidget";
+import MobileBottomNav from "@/components/v2/MobileBottomNav";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-export const metadata: Metadata = {
-  title: "Nobel | Secure Wealth Management",
-  description: "Fixed Income Solutions & Capital Protection for Australian investors.",
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body
-        className={`${inter.variable} font-sans antialiased text-slate-900 bg-slate-50 min-h-screen flex flex-col`}
-      >
-        {children}
-      </body>
-    </html>
-  );
+export default function V11Layout({ children }: { children: ReactNode }) {
+    return (
+        <LenisProvider>
+            <div className="bg-white min-h-screen relative pb-20 md:pb-0">
+                {children}
+                <AIChatWidget />
+                <MobileBottomNav />
+            </div>
+        </LenisProvider>
+    );
 }

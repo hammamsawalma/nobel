@@ -17,7 +17,7 @@ export default function V11Footer() {
                     <h4 className="text-white font-bold mb-4 uppercase tracking-widest text-sm">System Hub</h4>
                     <ul className="space-y-2 text-sm">
                         <li><Link href="/" className="hover:text-blue-400 transition-colors">Main Navigator</Link></li>
-                        <li><Link href="/variant-11/who-we-are" className="hover:text-blue-400 transition-colors">Firm Overview</Link></li>
+                        <li><Link href="/who-we-are" className="hover:text-blue-400 transition-colors">Firm Overview</Link></li>
                         <li><Link href="/knowledge-hub" className="hover:text-blue-400 transition-colors">Data Lake</Link></li>
                     </ul>
                 </div>

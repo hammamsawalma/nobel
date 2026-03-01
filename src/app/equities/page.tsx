@@ -3,9 +3,9 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import V11Header from "@/components/v11/Header";
-import V11Footer from "@/components/v11/Footer";
-import AssetAllocationSandbox from "@/components/v11/AssetAllocationSandbox";
+import V11Header from "@/components/v2/Header";
+import V11Footer from "@/components/v2/Footer";
+import AssetAllocationSandbox from "@/components/v2/AssetAllocationSandbox";
 
 export default function EquitiesPage() {
     // High-velocity Spring configuration
@@ -99,10 +99,8 @@ export default function EquitiesPage() {
                     <p className="text-xl text-gray-500 mb-10 max-w-2xl mx-auto">
                         Speak with our equity analysts to determine how your portfolio can capture monopolistic market share.
                     </p>
-                    <Link href="/variant-11/contact">
-                        <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm transition-colors shadow-xl shadow-blue-600/30">
-                            Book Strategic Review
-                        </button>
+                    <Link href="#contact" className="inline-block bg-[#0A1A3A] hover:bg-[#1A2A4A] text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-sm transition-colors shadow-2xl">
+                        Request Advisory Node Access
                     </Link>
                 </div>
             </section>
