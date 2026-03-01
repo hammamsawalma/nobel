@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShieldCheck, Award, Landmark, Gem, Hexagon } from "lucide-react";
+import { ShieldCheck, Award, Landmark, Gem, Hexagon, Crown, Scale, Key, Globe, Coins, TrendingUp, CircleDashed, Feather, PenTool, Activity, Fingerprint, Gavel, Anchor, Circle, Building } from "lucide-react";
 
 export default function BadgeSamplesPage() {
     return (
@@ -351,6 +351,305 @@ export default function BadgeSamplesPage() {
                                         </div>
                                     ))}
                                 </motion.div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* VARIANT 16: The Classic Lion & Shield */}
+                    <div className="border border-white/10 p-12 rounded-3xl relative">
+                        <div className="absolute top-[-16px] left-8 bg-blue-600 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Variant 16</div>
+                        <h2 className="text-2xl font-bold mb-8 text-gray-300">The Traditional Crown Crest</h2>
+                        <p className="text-sm text-gray-500 mb-8 max-w-lg">
+                            Evokes centuries-old European private banking. A simple, elegant crown and shield combination focusing on legacy and aristocracy.
+                        </p>
+                        <div className="flex justify-center bg-[#1E2532] py-20 rounded-2xl border border-white/5 relative overflow-hidden">
+                            <div className="flex flex-col items-center">
+                                <Crown className="w-10 h-10 text-[#C2A878] mb-2" strokeWidth={1.5} />
+                                <div className="border border-[#C2A878] p-1 rounded-t-full rounded-b-md">
+                                    <div className="bg-gradient-to-b from-[#FAF1D6] to-[#C2A878] text-[#1E2532] px-6 py-8 rounded-t-full rounded-b-md shadow-inner flex flex-col items-center min-w-[120px]">
+                                        <span className="font-serif text-4xl font-bold leading-none mb-1">25</span>
+                                        <span className="text-[8px] font-bold uppercase tracking-widest">Years</span>
+                                    </div>
+                                </div>
+                                <div className="mt-4 text-[#C2A878] text-xs uppercase tracking-[0.3em] font-serif">Legacy & Trust</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* VARIANT 17: The Pillar of Stability */}
+                    <div className="border border-white/10 p-12 rounded-3xl relative">
+                        <div className="absolute top-[-16px] left-8 bg-blue-600 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Variant 17</div>
+                        <h2 className="text-2xl font-bold mb-8 text-gray-300">The Greek Pillar</h2>
+                        <p className="text-sm text-gray-500 mb-8 max-w-lg">
+                            Represents foundational strength. Uses architectural columns as a metaphor for structural solidity and unshakeable markets.
+                        </p>
+                        <div className="flex justify-center bg-gray-50 py-20 rounded-2xl border border-gray-200 relative overflow-hidden">
+                            <div className="flex items-center gap-6">
+                                <Building className="w-16 h-16 text-[#0A1A3A] stroke-[1]" />
+                                <div className="flex flex-col border-l-2 border-gray-300 pl-6 py-2">
+                                    <span className="text-4xl text-[#0A1A3A] font-serif font-black leading-none">XXV</span>
+                                    <span className="text-gray-500 text-[9px] font-bold tracking-[0.2em] uppercase mt-2">Years of Institutional Foundation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* VARIANT 18: The Three Keys */}
+                    <div className="border border-white/10 p-12 rounded-3xl relative">
+                        <div className="absolute top-[-16px] left-8 bg-blue-600 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Variant 18</div>
+                        <h2 className="text-2xl font-bold mb-8 text-gray-300">The Three Keys</h2>
+                        <p className="text-sm text-gray-500 mb-8 max-w-lg">
+                            A highly traditional Swiss banking motif. Keys represent security, discretion, and access to exclusive wealth management.
+                        </p>
+                        <div className="flex justify-center bg-[#0C121A] py-20 rounded-2xl border border-white/5 relative overflow-hidden">
+                            <div className="relative border-4 border-double border-amber-600/50 p-6 rounded-full w-48 h-48 flex items-center justify-center bg-gradient-to-br from-[#121A26] to-[#0A0D14] shadow-2xl">
+                                <div className="absolute top-4 flex justify-center w-full">
+                                    <Key className="w-6 h-6 text-amber-500 rotate-[-45deg]" strokeWidth={1.5} />
+                                    <Key className="w-6 h-6 text-amber-500 rotate-[45deg] -ml-2" strokeWidth={1.5} />
+                                </div>
+                                <div className="flex flex-col items-center mt-6">
+                                    <span className="text-white text-5xl font-serif">25</span>
+                                    <span className="text-amber-500/80 text-[10px] tracking-[0.3em] font-serif uppercase mt-1">Anniversary</span>
+                                </div>
+                                <div className="absolute bottom-4 flex justify-center w-full text-gray-500 text-[8px] uppercase tracking-widest font-mono">2001 - 2026</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* VARIANT 19: The Roman Laurel Wreath */}
+                    <div className="border border-white/10 p-12 rounded-3xl relative">
+                        <div className="absolute top-[-16px] left-8 bg-blue-600 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Variant 19</div>
+                        <h2 className="text-2xl font-bold mb-8 text-gray-300">The Roman Laurel Wreath</h2>
+                        <p className="text-sm text-gray-500 mb-8 max-w-lg">
+                            The timeless symbol of victory and longevity. Very common in 25th, 50th, and 100th-anniversary insignias for global institutions.
+                        </p>
+                        <div className="flex justify-center bg-[#022B3A] py-20 rounded-2xl border border-white/5 relative overflow-hidden">
+                            <div className="relative flex items-center justify-center w-48 h-48">
+                                {/* SVG approximating a laurel wreath */}
+                                <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full text-[#D4AF37] opacity-80" fill="currentColor">
+                                    <path d="M15,50 C15,20 45,5 50,5 C55,5 85,20 85,50 C85,80 55,95 50,95 C45,95 15,80 15,50 Z" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="4 2" />
+                                    <path d="M20,50 C20,30 40,15 50,15 C60,15 80,30 80,50 C80,70 60,85 50,85 C40,85 20,70 20,50 Z" fill="none" stroke="currentColor" strokeWidth="1" />
+                                </svg>
+                                <div className="text-center z-10 flex flex-col items-center">
+                                    <span className="text-[#D4AF37] text-5xl font-serif italic pr-2">25</span>
+                                    <span className="text-[#BF953F] text-[9px] uppercase tracking-[0.3em] font-bold">Years</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* VARIANT 20: The Corporate Globe */}
+                    <div className="border border-white/10 p-12 rounded-3xl relative">
+                        <div className="absolute top-[-16px] left-8 bg-blue-600 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Variant 20</div>
+                        <h2 className="text-2xl font-bold mb-8 text-gray-300">The Global Footprint</h2>
+                        <p className="text-sm text-gray-500 mb-8 max-w-lg">
+                            Focuses on international reach and macroeconomic stability over a quarter-century. Uses a geometric wireframe globe.
+                        </p>
+                        <div className="flex justify-center bg-zinc-100 py-20 rounded-2xl border border-gray-300 relative overflow-hidden">
+                            <div className="flex items-center gap-6">
+                                <Globe className="w-16 h-16 text-blue-900 stroke-[1]" />
+                                <div className="flex flex-col">
+                                    <span className="text-blue-900 text-3xl font-black uppercase tracking-tighter">25 Years</span>
+                                    <div className="flex items-center gap-2 mt-1">
+                                        <div className="w-6 h-[1px] bg-blue-900/40"></div>
+                                        <span className="text-blue-900/60 text-[10px] font-bold uppercase tracking-[0.2em]">Global Markets</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* VARIANT 21: The Sovereign Coin */}
+                    <div className="border border-white/10 p-12 rounded-3xl relative">
+                        <div className="absolute top-[-16px] left-8 bg-blue-600 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Variant 21</div>
+                        <h2 className="text-2xl font-bold mb-8 text-gray-300">The Sovereign Coin</h2>
+                        <p className="text-sm text-gray-500 mb-8 max-w-lg">
+                            Designed to look like a physical embossed gold or platinum coin. Represents bullion, backing, and physical asset security.
+                        </p>
+                        <div className="flex justify-center bg-[#0F0F0F] py-20 rounded-2xl border border-white/5 relative overflow-hidden">
+                            <div className="w-40 h-40 rounded-full bg-gradient-to-br from-[#E6C27A] via-[#B8860B] to-[#593E00] p-1 shadow-[0_15px_30px_rgba(184,134,11,0.2)]">
+                                <div className="w-full h-full rounded-full border border-[#FFFACD]/40 bg-gradient-to-b from-[#DAA520] to-[#8B6508] p-1">
+                                    <div className="w-full h-full rounded-full border-2 border-dashed border-[#593E00]/50 flex flex-col items-center justify-center shadow-[inset_0_4px_10px_rgba(255,255,255,0.3)]">
+                                        <span className="text-[#3E2700] text-5xl font-black font-serif drop-shadow-sm">25</span>
+                                        <span className="text-[#3E2700] text-[8px] font-bold uppercase tracking-[0.2em] mt-1">Fine Gold</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* VARIANT 22: The Geometric Equator */}
+                    <div className="border border-white/10 p-12 rounded-3xl relative">
+                        <div className="absolute top-[-16px] left-8 bg-blue-600 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Variant 22</div>
+                        <h2 className="text-2xl font-bold mb-8 text-gray-300">The Geometric Equator</h2>
+                        <p className="text-sm text-gray-500 mb-8 max-w-lg">
+                            Modern interpretation of traditional banking logos (like Deutsche Bank or Chase). Uses abstract shapes like squares intersecting with a slash to represent compounded growth.
+                        </p>
+                        <div className="flex justify-center bg-white py-20 rounded-2xl border border-gray-200 relative overflow-hidden">
+                            <div className="flex items-center gap-8">
+                                <div className="w-16 h-16 bg-[#001E50] text-white flex items-center justify-center rounded-sm rotate-45">
+                                    <div className="w-8 h-8 border-2 border-white -rotate-45 flex items-center justify-center">
+                                        <div className="w-[2px] h-10 bg-white rotate-45"></div>
+                                    </div>
+                                </div>
+                                <div className="flex flex-col">
+                                    <span className="text-[#001E50] text-4xl font-black tracking-tighter">25 YRS</span>
+                                    <span className="text-[#001E50]/60 text-[10px] font-bold uppercase tracking-widest mt-1">Capital Expansion</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* VARIANT 23: The Justice Scale */}
+                    <div className="border border-white/10 p-12 rounded-3xl relative">
+                        <div className="absolute top-[-16px] left-8 bg-blue-600 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Variant 23</div>
+                        <h2 className="text-2xl font-bold mb-8 text-gray-300">The Fiduciary Scale</h2>
+                        <p className="text-sm text-gray-500 mb-8 max-w-lg">
+                            Uses the scale of justice to emphasize unbiased strategy, strict regulatory adherence, and perfectly balanced portfolios.
+                        </p>
+                        <div className="flex justify-center bg-[#F4F1EA] py-20 rounded-2xl border border-gray-200 relative overflow-hidden">
+                            <div className="flex flex-col items-center">
+                                <Scale className="w-12 h-12 text-[#2C3E50] mb-4 stroke-[1.5]" />
+                                <div className="text-[#2C3E50] text-3xl font-serif font-black underline decoration-1 underline-offset-8">25 YEARS</div>
+                                <div className="mt-4 text-gray-500 text-[9px] uppercase tracking-[0.3em] font-medium">Unbiased Equilibrium</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* VARIANT 24: The Wax Seal */}
+                    <div className="border border-white/10 p-12 rounded-3xl relative">
+                        <div className="absolute top-[-16px] left-8 bg-blue-600 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Variant 24</div>
+                        <h2 className="text-2xl font-bold mb-8 text-gray-300">The Signet Wax Seal</h2>
+                        <p className="text-sm text-gray-500 mb-8 max-w-lg">
+                            The ultimate symbol of final authorization and elite pedigree. Mimics a stamped wax press on a formal document.
+                        </p>
+                        <div className="flex justify-center bg-[#1A1A1A] py-20 rounded-2xl border border-white/5 relative overflow-hidden">
+                            <div className="relative">
+                                {/* Fake ribbon */}
+                                <div className="absolute top-1/2 left-[-40px] w-[200px] h-8 bg-blue-900 -translate-y-1/2 -z-10 shadow-lg"></div>
+                                {/* Wax Seal Base */}
+                                <div className="w-32 h-32 bg-[#8B0000] rounded-full flex justify-center items-center shadow-[0_10px_20px_rgba(0,0,0,0.8)] border border-[#AA0000]">
+                                    <div className="w-28 h-28 bg-[#7A0000] rounded-full flex justify-center items-center shadow-[inset_0_5px_15px_rgba(0,0,0,0.5)]">
+                                        <div className="text-[#D39E82] flex flex-col items-center">
+                                            <span className="font-serif text-4xl italic pr-1 drop-shadow-md">25</span>
+                                            <span className="text-[7px] uppercase tracking-widest border-t border-[#D39E82]/30 pt-1 mt-1">Certified</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* VARIANT 25: The Elegant Ribbon Banner */}
+                    <div className="border border-white/10 p-12 rounded-3xl relative">
+                        <div className="absolute top-[-16px] left-8 bg-blue-600 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Variant 25</div>
+                        <h2 className="text-2xl font-bold mb-8 text-gray-300">The Heirloom Ribbon</h2>
+                        <p className="text-sm text-gray-500 mb-8 max-w-lg">
+                            A classic sweeping banner ribbon. Highly legible, festive yet extremely professional, often used in wealth management reports.
+                        </p>
+                        <div className="flex justify-center bg-gray-50 py-24 rounded-2xl border border-gray-200 relative overflow-hidden">
+                            <div className="relative flex flex-col items-center">
+                                <span className="text-6xl text-blue-900 font-serif font-black relative z-10 bg-gray-50 px-4">25</span>
+                                <div className="absolute top-[60%] w-64 h-10 bg-gradient-to-r from-amber-600 via-amber-400 to-amber-600 -z-10 shadow-[0_4px_10px_rgba(0,0,0,0.2)] flex items-center justify-center transform skew-x-[-10deg]">
+                                    <span className="text-white text-[10px] font-bold tracking-[0.3em] uppercase transform skew-x-[10deg]">Years Excellence</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* VARIANT 26: The Founder's Signature */}
+                    <div className="border border-white/10 p-12 rounded-3xl relative">
+                        <div className="absolute top-[-16px] left-8 bg-blue-600 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Variant 26</div>
+                        <h2 className="text-2xl font-bold mb-8 text-gray-300">The Minimalist Signature</h2>
+                        <p className="text-sm text-gray-500 mb-8 max-w-lg">
+                            Imitates a handwritten founder's sign-off or fountain pen ink. Highly personal, artisanal, implying bespoke wealth curation.
+                        </p>
+                        <div className="flex justify-center bg-amber-50/50 py-20 rounded-2xl border border-amber-100 relative overflow-hidden">
+                            <div className="flex flex-col items-center gap-2">
+                                <PenTool className="w-6 h-6 text-gray-400 mb-2" strokeWidth={1} />
+                                <div className="text-4xl text-[#0A1A3A] font-[cursive] italic opacity-80">25 Years</div>
+                                <div className="w-32 h-[1px] bg-gradient-to-r from-transparent via-[#0A1A3A]/40 to-transparent"></div>
+                                <div className="text-[#0A1A3A]/50 text-[9px] font-mono uppercase tracking-[0.2em] mt-1">Curated Capital</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* VARIANT 27: The Architectural Blueprint */}
+                    <div className="border border-white/10 p-12 rounded-3xl relative">
+                        <div className="absolute top-[-16px] left-8 bg-blue-600 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Variant 27</div>
+                        <h2 className="text-2xl font-bold mb-8 text-gray-300">The Blueprint Overlay</h2>
+                        <p className="text-sm text-gray-500 mb-8 max-w-lg">
+                            Leans heavily into the "Architects of Growth" theme. Looks like a technical grid plotting mathematical certainty over 25 years.
+                        </p>
+                        <div className="flex justify-center bg-[#1E3A8A] py-20 rounded-2xl border border-white/5 relative overflow-hidden">
+                            {/* Blueprint grid background */}
+                            <div className="absolute inset-0 border-[0.5px] border-white/10 [background-image:linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:20px_20px]"></div>
+
+                            <div className="relative border border-white/30 backdrop-blur-sm p-6 flex flex-col items-end">
+                                <div className="text-white/50 text-[8px] font-mono tracking-widest uppercase mb-1">DATA//FIG:25.YRS</div>
+                                <span className="text-white text-6xl font-mono font-light tracking-tighter">25.0</span>
+                                <div className="w-full h-[1px] bg-white/30 my-2"></div>
+                                <div className="flex items-center gap-2">
+                                    <Activity className="w-4 h-4 text-cyan-400" />
+                                    <span className="text-cyan-400 text-[10px] uppercase font-bold tracking-widest">Model Verified</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* VARIANT 28: The Concentric Rings of Growth */}
+                    <div className="border border-white/10 p-12 rounded-3xl relative">
+                        <div className="absolute top-[-16px] left-8 bg-blue-600 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Variant 28</div>
+                        <h2 className="text-2xl font-bold mb-8 text-gray-300">Concentric Growth Rings</h2>
+                        <p className="text-sm text-gray-500 mb-8 max-w-lg">
+                            Uses expanding rings (like a tree trunk or radar) to visualize 25 years of compounded, outbound growth.
+                        </p>
+                        <div className="flex justify-center bg-zinc-900 py-24 rounded-2xl border border-white/5 relative overflow-hidden">
+                            <div className="relative flex items-center justify-center w-40 h-40">
+                                <div className="absolute inset-0 rounded-full border border-white/5 animate-ping" style={{ animationDuration: '3s' }}></div>
+                                <div className="absolute inset-2 rounded-full border border-white/10"></div>
+                                <div className="absolute inset-6 rounded-full border border-white/20"></div>
+                                <div className="absolute inset-10 rounded-full border border-white/40"></div>
+                                <div className="absolute bg-[#0A1A3A] w-16 h-16 rounded-full z-10 flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+                                    <span className="text-white font-black text-2xl">25</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* VARIANT 29: The Stained Glass Vault */}
+                    <div className="border border-white/10 p-12 rounded-3xl relative">
+                        <div className="absolute top-[-16px] left-8 bg-blue-600 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Variant 29</div>
+                        <h2 className="text-2xl font-bold mb-8 text-gray-300">The Stained Glass Vault</h2>
+                        <p className="text-sm text-gray-500 mb-8 max-w-lg">
+                            Intricate overlapping geometric panels. Emulates thick security glass or stained cathedral windows representing legacy wealth.
+                        </p>
+                        <div className="flex justify-center bg-[#000511] py-20 rounded-2xl border border-white/5 relative overflow-hidden">
+                            <div className="relative w-32 h-32 flex items-center justify-center">
+                                <div className="absolute inset-0 bg-blue-600/20 rounded-xl rotate-12 backdrop-blur-md border border-cyan-400/30"></div>
+                                <div className="absolute inset-0 bg-indigo-600/20 rounded-xl -rotate-12 backdrop-blur-md border border-indigo-400/30"></div>
+                                <div className="bg-[#0A1A3A]/80 backdrop-blur-xl p-4 rounded-lg border border-white/20 relative z-10 text-center shadow-2xl">
+                                    <div className="text-white text-3xl font-black">25</div>
+                                    <div className="text-cyan-200 text-[8px] uppercase tracking-[0.2em] font-bold mt-1">Years</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* VARIANT 30: The Nautical Anchor */}
+                    <div className="border border-white/10 p-12 rounded-3xl relative">
+                        <div className="absolute top-[-16px] left-8 bg-blue-600 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Variant 30</div>
+                        <h2 className="text-2xl font-bold mb-8 text-gray-300">The Nautical Anchor</h2>
+                        <p className="text-sm text-gray-500 mb-8 max-w-lg">
+                            Financial safety in rough waters. Uses a nautical anchor to symbolize grounding, heavy preservation, and calm in economic storms.
+                        </p>
+                        <div className="flex justify-center bg-[#E5E5E5] py-20 rounded-2xl border border-gray-300 relative overflow-hidden">
+                            <div className="flex flex-col items-center">
+                                <Anchor className="w-12 h-12 text-[#1c2c44] mb-4" strokeWidth={1.5} />
+                                <div className="text-[#1c2c44] font-serif font-black text-4xl mb-2">Quarter Century</div>
+                                <div className="text-gray-500 font-bold text-[9px] uppercase tracking-widest px-4 py-1 border border-gray-400 rounded-full">
+                                    Anchored Capital
+                                </div>
                             </div>
                         </div>
                     </div>
