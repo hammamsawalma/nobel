@@ -211,7 +211,7 @@ export default function InstitutionalGuardVariant() {
                             className="relative aspect-[4/5] w-full max-w-md mx-auto"
                         >
                             <Image
-                                src="/images/v16_institutional_guard_1.png"
+                                src="/images/v16_institutional_guard_1_1772326417985.png"
                                 alt="Modern Corporate Tower"
                                 fill
                                 className="object-cover shadow-2xl"
@@ -228,7 +228,7 @@ export default function InstitutionalGuardVariant() {
             {/* Custodial Vault Concept */}
             <section id="custodial" className="py-32 bg-[#0A1A2F] text-white relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-1/2 h-full opacity-20">
-                    <Image src="/images/v16_institutional_guard_3.png" alt="Secure Vault" fill className="object-cover" />
+                    <Image src="/images/v16_institutional_guard_3_1772326442392.png" alt="Secure Vault" fill className="object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-r from-[#0A1A2F] to-transparent" />
                 </div>
 
@@ -305,7 +305,7 @@ export default function InstitutionalGuardVariant() {
                         </div>
 
                         <div className="lg:col-span-7 relative aspect-[16/9] w-full">
-                            <Image src="/images/v16_institutional_guard_4.png" alt="Analytics Dashboard" fill className="object-cover shadow-2xl" />
+                            <Image src="/images/v16_institutional_guard_4_1772326456688.png" alt="Analytics Dashboard" fill className="object-cover shadow-2xl" />
                             <div className="absolute inset-0 bg-[#0A1A2F]/40 backdrop-blur-[2px] flex items-center justify-center">
                                 <div className="text-center p-8 bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl">
                                     <p className="text-white text-sm font-bold tracking-widest uppercase mb-2">Projected Maturity Value</p>
@@ -327,7 +327,7 @@ export default function InstitutionalGuardVariant() {
                         transition={{ duration: 0.8 }}
                         className="order-2 md:order-1 relative aspect-[4/5] w-full"
                     >
-                        <Image src="/images/v16_institutional_guard_5.png" alt="Leadership Team" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                        <Image src="/images/v16_institutional_guard_5_1772326469066.png" alt="Leadership Team" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
                         <div className="absolute inset-0 ring-1 ring-inset ring-white/20" />
                     </motion.div>
 

@@ -53,7 +53,7 @@ export default function BotanicalGrowthVariant() {
                     <div className="relative h-[500px] w-full lg:h-[700px] overflow-hidden rounded-[3rem] sm:rounded-[6rem] lg:rounded-tr-[10rem] lg:rounded-bl-[10rem] shadow-2xl">
                         <motion.div style={{ scale: heroScale }} className="w-full h-full relative">
                             <Image
-                                src="/images/botanical_growth.png"
+                                src="/images/v2_botanical_growth_1_1772325773315.png"
                                 alt="Nobel Sustainable Wealth Management Office"
                                 fill
                                 className="object-cover"

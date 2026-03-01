@@ -24,7 +24,7 @@ export default function CoastalWealthVariant() {
             <section className="relative h-screen flex items-center justify-center overflow-hidden">
                 <motion.div style={{ y: heroY, opacity: opacityFade }} className="absolute inset-0 z-0">
                     <Image
-                        src="/images/coastal_wealth.png"
+                        src="/images/v1_coastal_wealth_1_1772325682299.png"
                         alt="Nobel Coastal Wealth Management Office"
                         fill
                         className="object-cover"
@@ -201,7 +201,7 @@ export default function CoastalWealthVariant() {
                     >
                         <div className="aspect-square bg-slate-100 rounded-[3rem] overflow-hidden relative shadow-2xl">
                             <Image
-                                src="/images/coastal_wealth.png"
+                                src="/images/v1_coastal_wealth_2_1772325701624.png"
                                 alt="Nobel Financial Architect"
                                 fill
                                 className="object-cover object-right filter grayscale hover:grayscale-0 transition-all duration-1000"

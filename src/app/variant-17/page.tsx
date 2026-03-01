@@ -148,7 +148,7 @@ export default function YieldArchitectureVariant() {
                             viewport={{ once: true }}
                             className="relative aspect-square w-full bg-zinc-100 p-8"
                         >
-                            <Image src="/images/v17_yield_architecture_1.png" alt="Structural Yield Tower" fill className="object-cover p-4" />
+                            <Image src="/images/v17_yield_architecture_1_1772326548542.png" alt="Structural Yield Tower" fill className="object-cover p-4" />
                             <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-zinc-900" />
                             <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-zinc-900" />
                         </motion.div>
@@ -191,10 +191,10 @@ export default function YieldArchitectureVariant() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {[
-                            { title: "Corporate Bonds", yield: "6.5% - 8.0%", desc: "Senior secured debt from ASX-listed enterprises.", img: "/images/v17_yield_architecture_4.png" },
-                            { title: "Green Bonds", yield: "5.5% - 7.0%", desc: "Sustainable infrastructure and renewable energy debt.", img: "/images/v17_yield_architecture_2.png" },
-                            { title: "Term Investments", yield: "Fixed Term", desc: "Highly predictable, short-duration capital parking.", img: "/images/v17_yield_architecture_5.png" },
-                            { title: "High-Yield Debt", yield: "8.0% - 11.0%", desc: "Calculated risk structures for maximum income generation.", img: "/images/v17_yield_architecture_3.png" },
+                            { title: "Corporate Bonds", yield: "6.5% - 8.0%", desc: "Senior secured debt from ASX-listed enterprises.", img: "/images/v17_yield_architecture_4_1772326585627.png" },
+                            { title: "Green Bonds", yield: "5.5% - 7.0%", desc: "Sustainable infrastructure and renewable energy debt.", img: "/images/v17_yield_architecture_2_1772326561510.png" },
+                            { title: "Term Investments", yield: "Fixed Term", desc: "Highly predictable, short-duration capital parking.", img: "/images/v17_yield_architecture_5_1772326597795.png" },
+                            { title: "High-Yield Debt", yield: "8.0% - 11.0%", desc: "Calculated risk structures for maximum income generation.", img: "/images/v17_yield_architecture_3_1772326573598.png" },
                         ].map((item, idx) => (
                             <div key={idx} className="bg-zinc-800/50 border border-zinc-700/50 hover:border-[#10B981]/50 group transition-all duration-300">
                                 <div className="relative h-48 w-full overflow-hidden">
