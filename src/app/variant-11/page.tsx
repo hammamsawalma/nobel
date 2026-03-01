@@ -133,7 +133,7 @@ export default function Variant11NobelWealth() {
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true }}
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+                        className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 overflow-x-auto snap-x snap-mandatory pb-8 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden"
                     >
                         {[
                             { img: "v11_assets/main_approach_vault.png", title: "Fixed-Income Supremacy", desc: "A deliberate, heavily-weighted focus on predictable debt instruments for absolute mitigation." },
@@ -143,7 +143,7 @@ export default function Variant11NobelWealth() {
                             <motion.div
                                 key={i}
                                 variants={itemElastic as any}
-                                className="group relative rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-white"
+                                className="group relative rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-white min-w-[85vw] md:min-w-0 shrink-0 snap-center"
                             >
                                 {/* We will use the 3D assets here, but inverted or differently overlaid since they were dark. For now, placed on a light gray card top */}
                                 <div className="aspect-[16/9] relative bg-[#0A1128] overflow-hidden">
@@ -224,7 +224,7 @@ export default function Variant11NobelWealth() {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true }}
-                    className="flex flex-wrap gap-8 px-6 lg:px-12 justify-center max-w-[1600px] mx-auto"
+                    className="flex md:flex-wrap gap-6 md:gap-8 px-6 lg:px-12 md:justify-center max-w-[1600px] mx-auto overflow-x-auto snap-x snap-mandatory pb-8 md:pb-0 [&::-webkit-scrollbar]:hidden"
                 >
                     {[
                         { id: "TIER-1", title: "The Foundation Matrix", desc: "Government & Investment-Grade Bonds. Maximum capital preservation.", img: "v11_assets/main_tier1_foundation.png" },
@@ -236,7 +236,7 @@ export default function Variant11NobelWealth() {
                             variants={itemElastic as any}
                             whileHover={{ y: -15 }}
                             transition={snapSpring as any}
-                            className="w-full md:w-[400px] xl:w-[450px] aspect-[4/5] rounded-3xl overflow-hidden relative group cursor-crosshair shadow-2xl border-4 border-white"
+                            className="w-[85vw] md:w-[400px] xl:w-[450px] shrink-0 snap-center aspect-[4/5] rounded-3xl overflow-hidden relative group cursor-crosshair shadow-2xl border-4 border-white"
                         >
                             <Image src={`/${node.img}`} alt={node.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A3A] via-[#0A1A3A]/60 to-transparent"></div>

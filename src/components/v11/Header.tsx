@@ -7,8 +7,8 @@ import ClientPortalModal from '@/components/v11/ClientPortalModal';
 export default function V11Header() {
     const [isPortalOpen, setIsPortalOpen] = useState(false);
     return (
-        <div className="fixed top-6 left-0 w-full z-50 flex justify-center px-4 md:px-8">
-            <header className="w-full max-w-7xl bg-white/95 backdrop-blur-lg shadow-[0_8px_30px_rgb(0,0,0,0.08)] rounded-full px-8 py-4 flex justify-between items-center text-[#0A1A3A] border border-gray-100">
+        <div className="fixed top-0 md:top-6 left-0 w-full z-50 flex justify-center md:px-8">
+            <header className="w-full max-w-7xl bg-white/95 backdrop-blur-lg md:shadow-[0_8px_30px_rgb(0,0,0,0.08)] md:rounded-full px-6 py-4 md:px-8 md:py-4 flex justify-between items-center text-[#0A1A3A] border-b md:border border-gray-100">
                 <div className="font-black text-2xl tracking-tighter cursor-pointer">
                     <Link href="/variant-11">
                         NOBEL <span className="text-gray-400 font-light">| WEALTH</span>
@@ -26,7 +26,7 @@ export default function V11Header() {
                     >
                         Client Login
                     </button>
-                    <button className="bg-[#0A1A3A] hover:bg-[#1A2A4A] text-white px-8 py-3 rounded-full font-bold uppercase tracking-widest text-xs transition-colors shadow-lg shadow-[#0A1A3A]/20">
+                    <button className="hidden md:block bg-[#0A1A3A] hover:bg-[#1A2A4A] text-white px-8 py-3 rounded-full font-bold uppercase tracking-widest text-xs transition-colors shadow-lg shadow-[#0A1A3A]/20">
                         Initialize Contact
                     </button>
                 </div>

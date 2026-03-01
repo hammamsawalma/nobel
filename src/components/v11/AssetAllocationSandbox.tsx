@@ -41,43 +41,21 @@ export default function AssetAllocationSandbox() {
 
     return (
         <section className="py-32 bg-[#0A1A3A] text-white relative overflow-hidden">
-            <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
-                {/* Text & Controls */}
+                {/* Text Block */}
                 <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
+                    className="order-1 lg:col-start-1 lg:row-start-1 self-end"
                 >
                     <div className="text-blue-400 font-bold uppercase tracking-widest text-sm mb-4">Interactive Matrix</div>
                     <h2 className="text-5xl font-black mb-6">Dynamic Allocation Simulator.</h2>
-                    <p className="text-gray-300 mb-12 text-lg max-w-lg leading-relaxed">
+                    <p className="text-gray-300 mb-0 lg:mb-12 text-lg max-w-lg leading-relaxed">
                         Slide the control matrix to visualize how Nobel Rock dynamically recalibrates absolute asset allocation in real-time to match your exact risk-to-reward architecture.
                     </p>
-
-                    <div className="mb-12 bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm">
-                        <label className="block text-sm font-bold uppercase tracking-widest text-gray-400 mb-6">Dial Risk Tolerance</label>
-                        <input
-                            type="range"
-                            min="0"
-                            max="2"
-                            step="1"
-                            value={sliderValue}
-                            onChange={(e) => setSliderValue(parseInt(e.target.value))}
-                            className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer hover:bg-gray-600 transition-colors accent-blue-500 shadow-inner"
-                        />
-                        <div className="flex justify-between mt-4 text-xs font-bold text-gray-400 uppercase tracking-wider">
-                            <span className={sliderValue === 0 ? "text-blue-400" : ""}>Preservation</span>
-                            <span className={sliderValue === 1 ? "text-blue-400" : ""}>Balanced</span>
-                            <span className={sliderValue === 2 ? "text-blue-400" : ""}>Growth</span>
-                        </div>
-                    </div>
-
-                    <div className="bg-white/10 border-l-4 border-blue-500 p-6 rounded-r-xl">
-                        <h4 className="font-bold text-xl mb-2">{currentProfile.name}</h4>
-                        <p className="text-sm text-gray-300">Target weighting adjusted. The engine favors {currentProfile.data[0].name} and {currentProfile.data[2].name} combinations to shield downside.</p>
-                    </div>
                 </motion.div>
 
                 {/* Chart Visualization */}
@@ -86,7 +64,7 @@ export default function AssetAllocationSandbox() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-square bg-white/5 border border-white/10 rounded-3xl p-4 lg:p-8 backdrop-blur-md shadow-2xl"
+                    className="order-2 lg:col-start-2 lg:row-span-2 relative w-full aspect-square md:aspect-[4/3] lg:aspect-square bg-white/5 border border-white/10 rounded-3xl p-4 lg:p-8 backdrop-blur-md shadow-2xl"
                 >
                     <ResponsiveContainer width="100%" height="100%">
                         <PieChart>
@@ -121,8 +99,42 @@ export default function AssetAllocationSandbox() {
 
                     {/* Center Overlay Text */}
                     <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none mt-[-20px]">
-                        <span className="text-4xl font-black text-white mix-blend-screen drop-shadow-md">T-1</span>
+                        <span className="text-3xl md:text-4xl font-black text-white mix-blend-screen drop-shadow-md">T-1</span>
                         <span className="text-[10px] text-blue-300 font-bold uppercase tracking-widest mt-1">Matrix</span>
+                    </div>
+                </motion.div>
+
+                {/* Controls (Thumb Reachable) */}
+                <motion.div
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="order-3 lg:col-start-1 lg:row-start-2 self-start"
+                >
+                    <div className="mb-8 lg:mb-12 bg-white/5 border border-white/10 p-6 md:p-8 rounded-2xl backdrop-blur-sm">
+                        <label className="block text-sm font-bold uppercase tracking-widest text-gray-400 mb-6">Dial Risk Tolerance</label>
+                        <div className="py-4"> {/* Increased thumb target area */}
+                            <input
+                                type="range"
+                                min="0"
+                                max="2"
+                                step="1"
+                                value={sliderValue}
+                                onChange={(e) => setSliderValue(parseInt(e.target.value))}
+                                className="w-full h-3 bg-gray-700 rounded-lg appearance-none cursor-pointer hover:bg-gray-600 transition-colors accent-blue-500 shadow-inner block"
+                            />
+                        </div>
+                        <div className="flex justify-between mt-2 text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-wider">
+                            <span className={sliderValue === 0 ? "text-blue-400" : ""}>Preservation</span>
+                            <span className={sliderValue === 1 ? "text-blue-400" : ""}>Balanced</span>
+                            <span className={sliderValue === 2 ? "text-blue-400" : ""}>Growth</span>
+                        </div>
+                    </div>
+
+                    <div className="bg-white/10 border-l-4 border-blue-500 p-6 rounded-r-xl">
+                        <h4 className="font-bold text-xl mb-2">{currentProfile.name}</h4>
+                        <p className="text-sm text-gray-300">Target weighting adjusted. The engine favors {currentProfile.data[0].name} and {currentProfile.data[2].name} combinations to shield downside.</p>
                     </div>
                 </motion.div>
 
