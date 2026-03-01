@@ -184,12 +184,16 @@ export default function Variant11NobelWealth() {
                             We do not chase trends. We structure enduring value. Our absolute priority is the defense and calculated expansion of your assets using ASIC-compliant oversight.
                         </p>
 
-                        <div className="grid grid-cols-2 gap-6 md:gap-8">
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
                             <div>
-                                <div className="text-3xl md:text-4xl font-black text-white">100%</div>
-                                <div className="text-xs md:text-sm font-bold text-gray-400 uppercase tracking-widest mt-1">Unbiased Execution</div>
+                                <div className="text-3xl md:text-4xl font-black text-white">25+</div>
+                                <div className="text-xs md:text-sm font-bold text-gray-400 uppercase tracking-widest mt-1">Years Heritage</div>
                             </div>
                             <div>
+                                <div className="text-3xl md:text-4xl font-black text-white">100%</div>
+                                <div className="text-xs md:text-sm font-bold text-gray-400 uppercase tracking-widest mt-1">Unbiased Strategy</div>
+                            </div>
+                            <div className="col-span-2 md:col-span-1">
                                 <div className="text-3xl md:text-4xl font-black text-white">Tier-1</div>
                                 <div className="text-xs md:text-sm font-bold text-gray-400 uppercase tracking-widest mt-1">Custodians</div>
                             </div>
