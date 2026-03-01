@@ -68,60 +68,78 @@ export default function Variant11NobelWealth() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 z-0"></div>
 
                 <div className="max-w-7xl mx-auto w-full relative z-10 text-center mt-12 md:mt-20">
-                    <motion.div
-                        initial={{ scale: 0.8, opacity: 0, rotateY: 90 }}
-                        animate={{ scale: 1, opacity: 1, rotateY: 0 }}
-                        transition={{ ...snapSpring, delay: 0.1 } as any}
-                        className="mb-8 md:mb-12 flex justify-center relative cursor-default group"
-                        style={{ perspective: 1000 }}
-                    >
-                        {/* Huge pulsating glow behind the badge */}
-                        <div className="absolute inset-x-0 inset-y-[-20%] md:inset-[-20%] bg-amber-500/20 rounded-full blur-[40px] md:blur-[60px] animate-pulse group-hover:bg-amber-500/40 transition-all duration-700"></div>
+                    <style>{`
+                        @keyframes slideInDesktop {
+                            from { opacity: 0; transform: translateX(-60px); }
+                            to { opacity: 1; transform: translateX(0); }
+                        }
+                        @keyframes slideInMobile {
+                            from { opacity: 0; transform: translateY(-40px); }
+                            to { opacity: 1; transform: translateY(0); }
+                        }
+                        @keyframes textFadeDesktop {
+                            from { opacity: 0; transform: translateX(60px); }
+                            to { opacity: 1; transform: translateX(0); }
+                        }
+                        @keyframes sweepGlare {
+                            0% { transform: translateX(-100%) skewX(-15deg); }
+                            100% { transform: translateX(200%) skewX(-15deg); }
+                        }
+                        .animate-hero-badge {
+                            opacity: 0;
+                            animation: slideInMobile 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+                        }
+                        .animate-hero-text {
+                            opacity: 0;
+                            animation: slideInMobile 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+                        }
+                        @media (min-width: 768px) {
+                            .animate-hero-badge {
+                                animation: slideInDesktop 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+                            }
+                            .animate-hero-text {
+                                animation: textFadeDesktop 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+                            }
+                        }
+                        .hover-glare:hover .glare-element {
+                            animation: sweepGlare 1.5s ease-in-out;
+                        }
+                    `}</style>
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16 w-full max-w-6xl mx-auto">
 
-                        {/* The Seal Container */}
-                        <div className="relative bg-gradient-to-br from-[#1A2A4A] to-[#0A1A3A] border border-amber-400/40 p-1 rounded-2xl md:rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.5)] overflow-hidden scale-90 md:scale-100">
-                            {/* Inner metallic rim */}
-                            <div className="bg-gradient-to-b from-[#0A1A3A] to-black border border-white/5 rounded-xl md:rounded-2xl p-6 md:p-8 flex flex-col items-center justify-center relative z-10 overflow-hidden min-w-[280px] md:min-w-[340px]">
+                        {/* THE BADGE (Enhanced Variant 5) */}
+                        <div className="animate-hero-badge relative group cursor-pointer perspective-[1000px] shrink-0">
+                            {/* Backdrop glow */}
+                            <div className="absolute inset-0 bg-white/10 md:bg-white/5 rounded-[3rem] md:rounded-[4rem] blur-2xl group-hover:bg-amber-400/20 transition-all duration-700"></div>
 
-                                {/* Animated flare effect */}
-                                <div className="absolute top-0 left-[-100%] w-[50%] h-[200%] bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12 group-hover:left-[200%] transition-all duration-1000 ease-in-out z-0"></div>
+                            {/* The physical badge container */}
+                            <div className="relative hover-glare bg-[#0A1A3A]/40 md:bg-white/5 backdrop-blur-xl border border-white/20 p-8 md:p-12 rounded-tl-[3rem] md:rounded-tl-[4rem] rounded-br-[3rem] md:rounded-br-[4rem] rounded-tr-xl rounded-bl-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden flex items-start group-hover:border-amber-400/40 group-hover:-translate-y-2 transition-all duration-500">
 
-                                {/* The Centerpiece Logo */}
-                                <div className="bg-gradient-to-br from-amber-500/20 to-amber-700/10 p-4 md:p-5 rounded-full mb-4 md:mb-5 border border-amber-500/30 shadow-[0_0_30px_rgba(245,158,11,0.2)] relative z-10">
-                                    <ShieldCheck className="w-12 h-12 md:w-16 md:h-16 text-amber-400 drop-shadow-[0_0_15px_rgba(245,158,11,0.5)]" />
-                                </div>
+                                {/* Glare element */}
+                                <div className="glare-element absolute top-0 left-[-100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/20 to-transparent z-0 opacity-0 group-hover:opacity-100 mix-blend-overlay pointer-events-none"></div>
 
-                                {/* Typography */}
-                                <div className="text-center relative z-10">
-                                    <div className="text-amber-50 font-black text-4xl md:text-5xl tracking-tighter leading-none mb-2 md:mb-3 drop-shadow-md">
-                                        25<span className="text-xl md:text-2xl font-bold tracking-widest text-amber-200 uppercase ml-2 md:ml-3">Years</span>
-                                    </div>
-                                    <div className="text-[10px] md:text-sm font-black uppercase tracking-[0.2em] md:tracking-[0.3em] text-amber-500 whitespace-nowrap drop-shadow-sm">
-                                        Absolute Preservation
-                                    </div>
-                                    <div className="mt-3 md:mt-4 w-12 md:w-16 h-[2px] bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto"></div>
+                                <span className="text-[6rem] md:text-[8.5rem] font-black text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-200 to-gray-500 md:to-gray-600 leading-none tracking-tighter relative z-10 drop-shadow-xl group-hover:from-amber-100 group-hover:via-amber-300 group-hover:to-amber-500 transition-all duration-700">25</span>
+
+                                <div className="ml-5 md:ml-6 flex flex-col justify-between h-full pt-3 md:pt-5 relative z-10">
+                                    <span className="text-white font-black uppercase text-2xl md:text-3xl leading-none tracking-[0.1em] md:tracking-[0.2em] group-hover:text-amber-300 transition-colors duration-700">Years</span>
+                                    <span className="text-gray-300 md:text-gray-400 font-bold uppercase text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] max-w-[120px] md:max-w-[160px] mt-4 md:mt-6 border-t border-white/30 md:border-white/20 pt-3 group-hover:border-amber-400/40 transition-colors duration-700">
+                                        Defending<br className="hidden md:block" /> Institutional<br />Capital
+                                    </span>
                                 </div>
                             </div>
                         </div>
-                    </motion.div>
 
-                    <motion.h1
-                        initial={{ y: 50, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ ...snapSpring, delay: 0.2 } as any}
-                        className="text-5xl md:text-7xl lg:text-[8rem] font-black tracking-tighter leading-[0.9] text-white drop-shadow-2xl"
-                    >
-                        Nobel Rock <br />
-                        Partners.
-                    </motion.h1>
-                    <motion.p
-                        initial={{ y: 50, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ ...snapSpring, delay: 0.3 } as any}
-                        className="mt-6 md:mt-8 text-base md:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed drop-shadow-lg"
-                    >
-                        Institutional-grade portfolios engineered with precision, safeguarding your capital across generations.
-                    </motion.p>
+                        {/* HERO TEXT */}
+                        <div className="animate-hero-text flex flex-col justify-center text-center md:text-left relative z-10">
+                            <h1 className="text-[3.5rem] leading-[0.95] md:text-[5rem] lg:text-[7.5rem] font-black tracking-tighter md:leading-[0.9] text-white drop-shadow-2xl">
+                                Nobel Rock <br className="hidden md:block" />
+                                {` `}Partners.
+                            </h1>
+                            <p className="mt-5 md:mt-8 text-base md:text-xl text-gray-200 max-w-md mx-auto md:mx-0 leading-relaxed drop-shadow-lg font-medium px-4 md:px-0">
+                                Institutional-grade portfolios engineered with precision, safeguarding your capital across generations.
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Scroll Indicator */}
