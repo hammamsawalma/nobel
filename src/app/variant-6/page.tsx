@@ -1,5 +1,8 @@
 "use client";
 
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 
@@ -23,6 +26,7 @@ export default function Variant6KineticGold() {
 
     return (
         <div className="bg-[#0A0A0A] text-[#E8DCC2] selection:bg-[#D4AF37] selection:text-black">
+            <Header />
 
             {/* 
         The outer container height determines how much user must scroll vertically to finish the horizontal pan.
@@ -194,6 +198,7 @@ export default function Variant6KineticGold() {
 
             </div>
 
+                    <Footer />
         </div>
     );
 }

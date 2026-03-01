@@ -1,5 +1,8 @@
 "use client";
 
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
@@ -17,6 +20,7 @@ export default function Variant5NorthSydney() {
 
     return (
         <div className="font-sans text-white min-h-[300vh]" ref={containerRef}>
+            <Header />
 
             {/* FIXED BACKGROUND VIDEO */}
             <motion.div
@@ -142,6 +146,7 @@ export default function Variant5NorthSydney() {
                 </div>
 
             </div>
+                    <Footer />
         </div>
     );
 }

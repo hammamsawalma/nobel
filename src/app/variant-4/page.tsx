@@ -1,5 +1,8 @@
 "use client";
 
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
@@ -24,6 +27,7 @@ export default function Variant4HarbourMomentum() {
 
     return (
         <div className="font-sans bg-slate-900 text-white min-h-screen selection:bg-cyan-500 selection:text-white" ref={containerRef}>
+            <Header />
 
             {/* Mobile-only Hero (hidden on lg) */}
             <div className="lg:hidden relative h-screen w-full flex items-center justify-center overflow-hidden">
@@ -152,6 +156,7 @@ export default function Variant4HarbourMomentum() {
                 </div>
 
             </div>
+                    <Footer />
         </div>
     );
 }

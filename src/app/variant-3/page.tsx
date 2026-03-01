@@ -1,5 +1,8 @@
 "use client";
 
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
@@ -23,6 +26,7 @@ export default function Variant3SydneyAerial() {
 
     return (
         <div className="font-sans bg-black text-white overflow-x-hidden min-h-screen selection:bg-white selection:text-black" ref={containerRef}>
+            <Header />
 
             {/* SECTION 1 & 2: Hero Video Mask & Sticky Scroll Reveal */}
             <section ref={heroRef} className="relative h-[200vh]">
@@ -204,6 +208,7 @@ export default function Variant3SydneyAerial() {
                 </div>
             </section>
 
+                    <Footer />
         </div>
     );
 }

@@ -1,5 +1,8 @@
 "use client";
 
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+
 import { motion, Transition } from 'framer-motion';
 
 export default function Variant9OutbackHorizon() {
@@ -35,6 +38,7 @@ export default function Variant9OutbackHorizon() {
 
     return (
         <div className="bg-[#1C0F08] text-[#EAD5C5] font-sans selection:bg-[#E0522B] selection:text-white overflow-x-hidden min-h-screen">
+            <Header />
 
             {/* SECTION 1: Elastic Hero */}
             <section className="min-h-screen flex flex-col justify-center px-6 lg:px-12 relative overflow-hidden">
@@ -318,6 +322,7 @@ export default function Variant9OutbackHorizon() {
                 </div>
             </section>
 
+                    <Footer />
         </div>
     );
 }
