@@ -110,19 +110,19 @@ export default function Variant11NobelWealth() {
                         {/* THE BADGE (Enhanced Variant 5) */}
                         <div className="animate-hero-badge relative group cursor-pointer perspective-[1000px] shrink-0">
                             {/* Backdrop glow */}
-                            <div className="absolute inset-0 bg-white/10 md:bg-white/5 rounded-[3rem] md:rounded-[4rem] blur-2xl group-hover:bg-amber-400/20 transition-all duration-700"></div>
+                            <div className="absolute inset-0 bg-white/10 md:bg-white/5 rounded-[3rem] md:rounded-[4rem] blur-2xl group-hover:bg-cyan-500/20 transition-all duration-700"></div>
 
                             {/* The physical badge container */}
-                            <div className="relative hover-glare bg-[#0A1A3A]/40 md:bg-white/5 backdrop-blur-xl border border-white/20 p-5 md:p-12 rounded-tl-[2rem] md:rounded-tl-[4rem] rounded-br-[2rem] md:rounded-br-[4rem] rounded-tr-xl rounded-bl-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden flex items-start group-hover:border-amber-400/40 group-hover:-translate-y-2 transition-all duration-500">
+                            <div className="relative hover-glare bg-[#0A1A3A]/40 md:bg-white/5 backdrop-blur-xl border border-white/20 p-5 md:p-12 rounded-tl-[2rem] md:rounded-tl-[4rem] rounded-br-[2rem] md:rounded-br-[4rem] rounded-tr-xl rounded-bl-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden flex items-start group-hover:border-cyan-400/40 group-hover:-translate-y-2 transition-all duration-500">
 
                                 {/* Glare element */}
                                 <div className="glare-element absolute top-0 left-[-100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/20 to-transparent z-0 opacity-0 group-hover:opacity-100 mix-blend-overlay pointer-events-none"></div>
 
-                                <span className="text-[4.5rem] md:text-[8.5rem] font-black text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-200 to-gray-500 md:to-gray-600 leading-none tracking-tighter relative z-10 drop-shadow-xl group-hover:from-amber-100 group-hover:via-amber-300 group-hover:to-amber-500 transition-all duration-700">25</span>
+                                <span className="text-[4.5rem] md:text-[8.5rem] font-black text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-200 to-gray-500 md:to-gray-600 leading-none tracking-tighter relative z-10 drop-shadow-xl group-hover:from-cyan-100 group-hover:via-cyan-300 group-hover:to-cyan-500 transition-all duration-700">25</span>
 
                                 <div className="ml-4 md:ml-6 flex flex-col justify-between h-full pt-1.5 md:pt-5 relative z-10">
-                                    <span className="text-white font-black uppercase text-lg md:text-3xl leading-none tracking-[0.1em] md:tracking-[0.2em] group-hover:text-amber-300 transition-colors duration-700">Years</span>
-                                    <span className="text-gray-300 md:text-gray-400 font-bold uppercase text-[9px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] max-w-[100px] md:max-w-[160px] mt-3 md:mt-6 border-t border-white/30 md:border-white/20 pt-2 group-hover:border-amber-400/40 transition-colors duration-700">
+                                    <span className="text-white font-black uppercase text-lg md:text-3xl leading-none tracking-[0.1em] md:tracking-[0.2em] group-hover:text-cyan-300 transition-colors duration-700">Years</span>
+                                    <span className="text-gray-300 md:text-gray-400 font-bold uppercase text-[9px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] max-w-[100px] md:max-w-[160px] mt-3 md:mt-6 border-t border-white/30 md:border-white/20 pt-2 group-hover:border-cyan-400/40 transition-colors duration-700">
                                         Defending<br className="hidden md:block" /> Institutional<br />Capital
                                     </span>
                                 </div>
