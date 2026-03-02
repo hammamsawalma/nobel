@@ -231,7 +231,7 @@ export default function Variant11NobelWealth() {
             <section className="bg-[#0A1A3A] flex flex-col lg:flex-row relative lg:min-h-[80vh]">
                 {/* Image Half */}
                 <div className="w-full lg:w-1/2 relative min-h-[40vh] md:min-h-[50vh] lg:min-h-full z-0 order-1 lg:order-none lg:absolute lg:inset-y-0 lg:left-0">
-                    <Image src="/v11_assets/main_strategic_vision.png" alt="Boardroom Executives" fill className="object-cover opacity-80" />
+                    <Image src="/v11_assets/noble_rock_wealth.png" alt="Noble Rock Wealth Management" fill className="object-cover opacity-80" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A3A] to-transparent lg:hidden"></div>
                 </div>
 
