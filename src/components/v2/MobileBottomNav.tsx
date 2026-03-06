@@ -2,13 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, Compass, UserCircle, Menu, X, ChevronRight, BarChart3, TrendingUp, HeartHandshake, ShieldCheck, FileText, BookOpen, Lock, Building2 } from "lucide-react";
+import { Home, BookOpen, Lock, Menu, X, ChevronRight, BarChart3, TrendingUp, HeartHandshake, Building2 } from "lucide-react";
 import { useState, useEffect } from "react";
-import ClientPortalModal from "./ClientPortalModal";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function MobileBottomNav() {
     const pathname = usePathname();
-    const [isPortalOpen, setIsPortalOpen] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     // Prevent body scroll when menu is open
@@ -21,137 +20,157 @@ export default function MobileBottomNav() {
         return () => { document.body.style.overflow = 'unset'; };
     }, [isMenuOpen]);
 
-    // Close menu automatically on route change if a link is clicked
+    // Close menu automatically on route change
     useEffect(() => {
         setIsMenuOpen(false);
     }, [pathname]);
 
+    const isActive = (href: string) => {
+        if (href === '/v2') return pathname === '/v2';
+        return pathname?.startsWith(href);
+    };
+
     return (
         <>
-            {/* 1. BOTTOM FLOATING BAR */}
-            <div className="md:hidden fixed bottom-0 left-0 w-full z-[90] bg-white/95 backdrop-blur-xl border-t border-gray-200 shadow-[0_-10px_40px_rgba(0,0,0,0.05)]" style={{ paddingBottom: 'env(safe-area-inset-bottom, 16px)' }}>
-                <div className="flex justify-between items-center px-4 py-2">
+            {/* 1. BOTTOM FLOATING BAR — V2 Dark/Gold Theme */}
+            <div
+                className="md:hidden fixed bottom-0 left-0 w-full z-[90] bg-noble-charcoal/90 backdrop-blur-xl border-t border-noble-gold-900/40 shadow-[0_-8px_30px_rgba(0,0,0,0.6)]"
+                style={{ paddingBottom: 'env(safe-area-inset-bottom, 12px)' }}
+            >
+                <div className="flex justify-between items-center px-4 py-3">
 
-                    <Link href="/" className="flex flex-col items-center justify-center gap-1 group w-16">
-                        <div className={`p-2 rounded-xl transition-all ${pathname === '/' ? 'bg-blue-50 text-blue-600' : 'text-gray-400 group-hover:bg-gray-50 group-hover:text-gray-600'}`}>
+                    <Link href="/v2" className="flex flex-col items-center justify-center gap-1 group w-16">
+                        <div className={`p-2 rounded-xl transition-all duration-300 ${isActive('/v2') ? 'bg-noble-gold-900/30 text-noble-gold-400' : 'text-noble-slate group-hover:text-noble-ivory'}`}>
                             <Home className="w-5 h-5" />
                         </div>
-                        <span className={`text-[10px] font-bold tracking-wide ${pathname === '/' ? 'text-blue-600' : 'text-gray-400'}`}>Home</span>
+                        <span className={`text-[9px] font-bold tracking-[0.15em] uppercase ${isActive('/v2') ? 'text-noble-gold-400' : 'text-noble-slate/60'}`}>Home</span>
                     </Link>
 
-                    <Link href="/journal" className="flex flex-col items-center justify-center gap-1 group w-16">
-                        <div className={`p-2 rounded-xl transition-all ${pathname?.startsWith('/journal') ? 'bg-blue-50 text-blue-600' : 'text-gray-400 group-hover:bg-gray-50 group-hover:text-gray-600'}`}>
-                            <FileText className="w-5 h-5" />
+                    <Link href="/v2/insights" className="flex flex-col items-center justify-center gap-1 group w-16">
+                        <div className={`p-2 rounded-xl transition-all duration-300 ${isActive('/v2/insights') ? 'bg-noble-gold-900/30 text-noble-gold-400' : 'text-noble-slate group-hover:text-noble-ivory'}`}>
+                            <BookOpen className="w-5 h-5" />
                         </div>
-                        <span className={`text-[10px] font-bold tracking-wide ${pathname?.startsWith('/journal') ? 'text-blue-600' : 'text-gray-400'}`}>Journal</span>
+                        <span className={`text-[9px] font-bold tracking-[0.15em] uppercase ${isActive('/v2/insights') ? 'text-noble-gold-400' : 'text-noble-slate/60'}`}>Insights</span>
                     </Link>
 
-                    <button onClick={() => setIsPortalOpen(true)} className="flex flex-col items-center justify-center gap-1 group w-16">
-                        <div className="p-2 rounded-xl transition-all text-gray-400 group-hover:bg-gray-50 group-hover:text-gray-600">
-                            <UserCircle className="w-5 h-5" />
+                    <Link href="/v2/portal" className="flex flex-col items-center justify-center gap-1 group w-16">
+                        <div className={`p-2 rounded-xl transition-all duration-300 ${isActive('/v2/portal') ? 'bg-noble-gold-900/30 text-noble-gold-400' : 'text-noble-slate group-hover:text-noble-ivory'}`}>
+                            <Lock className="w-5 h-5" />
                         </div>
-                        <span className="text-[10px] font-bold tracking-wide text-gray-400">Login</span>
-                    </button>
+                        <span className={`text-[9px] font-bold tracking-[0.15em] uppercase ${isActive('/v2/portal') ? 'text-noble-gold-400' : 'text-noble-slate/60'}`}>Vault</span>
+                    </Link>
 
                     <button onClick={() => setIsMenuOpen(true)} className="flex flex-col items-center justify-center gap-1 group w-16">
-                        <div className={`p-2 rounded-xl transition-all ${isMenuOpen ? 'bg-[#0A1A3A] text-white' : 'text-gray-400 group-hover:bg-gray-50 group-hover:text-gray-600'}`}>
+                        <div className={`p-2 rounded-xl transition-all duration-300 ${isMenuOpen ? 'bg-noble-gold-900/30 text-noble-gold-400' : 'text-noble-slate group-hover:text-noble-ivory'}`}>
                             <Menu className="w-5 h-5" />
                         </div>
-                        <span className={`text-[10px] font-bold tracking-wide ${isMenuOpen ? 'text-[#0A1A3A]' : 'text-gray-400'}`}>Menu</span>
+                        <span className={`text-[9px] font-bold tracking-[0.15em] uppercase ${isMenuOpen ? 'text-noble-gold-400' : 'text-noble-slate/60'}`}>Menu</span>
                     </button>
 
                 </div>
             </div>
 
-            {/* 2. FULL SCREEN DRAWER MENU */}
-            <div className={`fixed inset-0 z-[100] bg-white transform transition-transform duration-500 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+            {/* 2. FULL SCREEN DRAWER — V2 Dark/Gold Theme */}
+            <AnimatePresence>
+                {isMenuOpen && (
+                    <motion.div
+                        initial={{ x: '100%' }}
+                        animate={{ x: 0 }}
+                        exit={{ x: '100%' }}
+                        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                        className="fixed inset-0 z-[100] bg-noble-charcoal flex flex-col"
+                    >
+                        {/* Subtle radial glow */}
+                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(238,194,61,0.05)_0%,transparent_60%)] pointer-events-none" />
 
-                {/* Drawer Header */}
-                <div className="flex items-center justify-between px-6 py-6 border-b border-gray-100 bg-white">
-                    <div className="font-black text-xl tracking-tighter text-[#0A1A3A]">
-                        NOBEL <span className="text-gray-400 font-light">| WEALTH</span>
-                    </div>
-                    <button onClick={() => setIsMenuOpen(false)} className="p-2 bg-gray-50 rounded-full text-gray-500 hover:text-[#0A1A3A] transition-colors">
-                        <X className="w-6 h-6" />
-                    </button>
-                </div>
-
-                {/* Drawer Scrollable Content */}
-                <div className="h-[calc(100vh-80px)] overflow-y-auto pb-32">
-
-                    {/* Top Level Nav */}
-                    <div className="px-6 py-6 border-b border-gray-100">
-                        <Link href="/who-we-are" className="flex items-center justify-between py-4 group">
-                            <div className="flex items-center gap-4 text-[#0A1A3A] font-bold text-lg">
-                                <Building2 className="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" /> Who We Are
-                            </div>
-                            <ChevronRight className="w-5 h-5 text-gray-300" />
-                        </Link>
-                        <Link href="/how-to-invest" className="flex items-center justify-between py-4 group">
-                            <div className="flex items-center gap-4 text-[#0A1A3A] font-bold text-lg">
-                                <TrendingUp className="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" /> How to Invest
-                            </div>
-                            <ChevronRight className="w-5 h-5 text-gray-300" />
-                        </Link>
-                    </div>
-
-                    {/* Solutions Section */}
-                    <div className="px-6 py-6 border-b border-gray-100 bg-gray-50/50">
-                        <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Investment Solutions</h3>
-                        <div className="grid gap-2">
-                            <Link href="/fixed-income" className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-gray-100 hover:border-blue-200 transition-colors">
-                                <div className="bg-blue-50 text-blue-600 p-2.5 rounded-xl"><BarChart3 className="w-5 h-5" /></div>
-                                <div><h4 className="text-[#0A1A3A] font-bold text-sm">Fixed Income</h4><p className="text-gray-500 text-xs mt-0.5">Structured bonds & fixed interest</p></div>
+                        {/* Drawer Header */}
+                        <div className="flex items-center justify-between px-6 py-5 border-b border-noble-gold-900/30 relative z-10 bg-noble-charcoal/80 backdrop-blur-xl">
+                            <Link href="/v2" onClick={() => setIsMenuOpen(false)}>
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                    src="/images/noble_rock_logo.png"
+                                    alt="Noble Rock Private Wealth"
+                                    style={{ height: '52px', width: 'auto', objectFit: 'contain' }}
+                                />
                             </Link>
-                            <Link href="/equities" className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-gray-100 hover:border-purple-200 transition-colors">
-                                <div className="bg-purple-50 text-purple-600 p-2.5 rounded-xl"><TrendingUp className="w-5 h-5" /></div>
-                                <div><h4 className="text-[#0A1A3A] font-bold text-sm">Equities</h4><p className="text-gray-500 text-xs mt-0.5">Global market exposure</p></div>
-                            </Link>
-                            <Link href="/financial-advice" className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-gray-100 hover:border-emerald-200 transition-colors">
-                                <div className="bg-emerald-50 text-emerald-600 p-2.5 rounded-xl"><HeartHandshake className="w-5 h-5" /></div>
-                                <div><h4 className="text-[#0A1A3A] font-bold text-sm">Financial Advice</h4><p className="text-gray-500 text-xs mt-0.5">Strategic wealth structuring</p></div>
-                            </Link>
-                            <Link href="/retirement-planning" className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-gray-100 hover:border-orange-200 transition-colors">
-                                <div className="bg-orange-50 text-orange-600 p-2.5 rounded-xl"><ShieldCheck className="w-5 h-5" /></div>
-                                <div><h4 className="text-[#0A1A3A] font-bold text-sm">Retirement</h4><p className="text-gray-500 text-xs mt-0.5">Capital preservation planning</p></div>
-                            </Link>
+                            <button
+                                onClick={() => setIsMenuOpen(false)}
+                                className="p-2 rounded-xl border border-noble-gold-900/30 text-noble-slate hover:text-noble-ivory hover:border-noble-gold-600/50 transition-all duration-300"
+                                aria-label="Close menu"
+                            >
+                                <X className="w-5 h-5" />
+                            </button>
                         </div>
-                    </div>
 
-                    {/* Resources Section */}
-                    <div className="px-6 py-6 border-b border-gray-100">
-                        <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Knowledge & Resources</h3>
-                        <div className="space-y-4">
-                            <Link href="/journal" className="flex items-center gap-4 group">
-                                <div className="bg-gray-100 text-gray-600 p-2 rounded-lg group-hover:bg-blue-600 group-hover:text-white transition-colors"><FileText className="w-4 h-4" /></div>
-                                <span className="text-sm font-bold text-[#0A1A3A]">The Journal</span>
-                            </Link>
-                            <Link href="/insights" className="flex items-center gap-4 group">
-                                <div className="bg-gray-100 text-gray-600 p-2 rounded-lg group-hover:bg-[#0A1A3A] group-hover:text-white transition-colors"><Compass className="w-4 h-4" /></div>
-                                <span className="text-sm font-bold text-[#0A1A3A]">Market Insights</span>
-                            </Link>
-                            <Link href="/glossary" className="flex items-center gap-4 group">
-                                <div className="bg-gray-100 text-gray-600 p-2 rounded-lg"><BookOpen className="w-4 h-4" /></div>
-                                <span className="text-sm font-bold text-[#0A1A3A]">Financial Glossary</span>
-                            </Link>
-                            <Link href="/scam-alert" className="flex items-center gap-4 group">
-                                <div className="bg-red-50 text-red-600 p-2 rounded-lg"><Lock className="w-4 h-4" /></div>
-                                <span className="text-sm font-bold text-red-600">Security Center</span>
-                            </Link>
+                        {/* Drawer Scrollable Content */}
+                        <div className="flex-1 overflow-y-auto pb-32 relative z-10">
+
+                            {/* Top Level Nav */}
+                            <div className="px-6 py-4 border-b border-noble-gold-900/20">
+                                <p className="text-[9px] uppercase tracking-[0.4em] text-noble-gold-600 font-bold mb-4">Navigation</p>
+                                <Link href="/v2" onClick={() => setIsMenuOpen(false)} className="flex items-center justify-between py-4 group border-b border-noble-gold-900/10">
+                                    <div className="flex items-center gap-4 text-noble-ivory font-bold text-base tracking-wide">
+                                        <Home className="w-4 h-4 text-noble-gold-500/60 group-hover:text-noble-gold-400 transition-colors" /> Home
+                                    </div>
+                                    <ChevronRight className="w-4 h-4 text-noble-slate/40" />
+                                </Link>
+                                <Link href="/v2/the-firm" onClick={() => setIsMenuOpen(false)} className="flex items-center justify-between py-4 group border-b border-noble-gold-900/10">
+                                    <div className="flex items-center gap-4 text-noble-ivory font-bold text-base tracking-wide">
+                                        <Building2 className="w-4 h-4 text-noble-gold-500/60 group-hover:text-noble-gold-400 transition-colors" /> The Firm
+                                    </div>
+                                    <ChevronRight className="w-4 h-4 text-noble-slate/40" />
+                                </Link>
+                                <Link href="/v2/insights" onClick={() => setIsMenuOpen(false)} className="flex items-center justify-between py-4 group">
+                                    <div className="flex items-center gap-4 text-noble-ivory font-bold text-base tracking-wide">
+                                        <BookOpen className="w-4 h-4 text-noble-gold-500/60 group-hover:text-noble-gold-400 transition-colors" /> Insights
+                                    </div>
+                                    <ChevronRight className="w-4 h-4 text-noble-slate/40" />
+                                </Link>
+                            </div>
+
+                            {/* Wealth Strategies Section */}
+                            <div className="px-6 py-6 border-b border-noble-gold-900/20">
+                                <p className="text-[9px] uppercase tracking-[0.4em] text-noble-gold-600 font-bold mb-4">Wealth Strategies</p>
+                                <div className="grid gap-2">
+                                    <Link href="/v2/wealth-strategies/fixed-income" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-4 p-4 rounded-xl bg-noble-charcoal/60 border border-noble-gold-900/20 hover:border-noble-gold-600/40 transition-colors">
+                                        <div className="bg-noble-gold-900/30 text-noble-gold-500 p-2.5 rounded-xl"><BarChart3 className="w-4 h-4" /></div>
+                                        <div>
+                                            <h4 className="text-noble-ivory font-bold text-sm tracking-wide">Fixed Income</h4>
+                                            <p className="text-noble-slate text-xs mt-0.5">Sovereign & AAA-rated preservation</p>
+                                        </div>
+                                    </Link>
+                                    <Link href="/v2/wealth-strategies/equities" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-4 p-4 rounded-xl bg-noble-charcoal/60 border border-noble-gold-900/20 hover:border-noble-gold-600/40 transition-colors">
+                                        <div className="bg-noble-gold-900/30 text-noble-gold-500 p-2.5 rounded-xl"><TrendingUp className="w-4 h-4" /></div>
+                                        <div>
+                                            <h4 className="text-noble-ivory font-bold text-sm tracking-wide">Strategic Equities</h4>
+                                            <p className="text-noble-slate text-xs mt-0.5">Blue-chip global equity exposure</p>
+                                        </div>
+                                    </Link>
+                                    <Link href="/v2/wealth-strategies/family-office" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-4 p-4 rounded-xl bg-noble-charcoal/60 border border-noble-gold-900/20 hover:border-noble-gold-600/40 transition-colors">
+                                        <div className="bg-noble-gold-900/30 text-noble-gold-500 p-2.5 rounded-xl"><HeartHandshake className="w-4 h-4" /></div>
+                                        <div>
+                                            <h4 className="text-noble-ivory font-bold text-sm tracking-wide">Family Office</h4>
+                                            <p className="text-noble-slate text-xs mt-0.5">Generational wealth architecture</p>
+                                        </div>
+                                    </Link>
+                                </div>
+                            </div>
+
+                            {/* Client Vault CTA */}
+                            <div className="px-6 py-8">
+                                <Link
+                                    href="/v2/portal"
+                                    onClick={() => setIsMenuOpen(false)}
+                                    className="w-full flex justify-center items-center gap-3 bg-gradient-to-r from-noble-gold-700/40 to-noble-gold-900/20 border border-noble-gold-500/60 text-noble-gold-300 py-4 rounded-xl font-bold uppercase tracking-[0.3em] text-[10px] hover:text-noble-gold-100 hover:border-noble-gold-400 transition-all duration-500 shadow-[0_0_20px_rgba(238,194,61,0.08)]"
+                                >
+                                    Client Vault →
+                                </Link>
+                            </div>
+
                         </div>
-                    </div>
-
-                    {/* Footer Contact */}
-                    <div className="px-6 py-8">
-                        <Link href="/contact" className="w-full flex justify-center items-center bg-[#0A1A3A] text-white py-4 rounded-xl font-bold uppercase tracking-widest text-sm hover:bg-[#1A2A4A] transition-colors shadow-lg">
-                            Contact Support
-                        </Link>
-                    </div>
-
-                </div>
-            </div>
-
-            <ClientPortalModal isOpen={isPortalOpen} onClose={() => setIsPortalOpen(false)} />
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </>
     );
 }

@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
-import { Inter, Cormorant_Garamond, Playfair_Display } from 'next/font/google';
+import { Outfit, Cormorant_Garamond, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import { ReactNode } from "react";
 import { LenisProvider } from "@/components/v2/LenisProvider";
 import AIChatWidget from "@/components/v2/AIChatWidget";
 import MobileBottomNav from "@/components/v2/MobileBottomNav";
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
+const outfit = Outfit({ subsets: ['latin'], variable: '--font-sans' });
 const cormorantGaramond = Cormorant_Garamond({
     subsets: ['latin'],
     weight: ['300', '400', '500', '600', '700'],
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
     return (
-        <html lang="en" className={`${inter.variable} ${cormorantGaramond.variable} ${playfair.variable}`}>
+        <html lang="en" className={`${outfit.variable} ${cormorantGaramond.variable} ${playfair.variable}`}>
             <body className="antialiased">
                 <LenisProvider>
                     <div className="bg-white min-h-screen relative pb-20 md:pb-0">

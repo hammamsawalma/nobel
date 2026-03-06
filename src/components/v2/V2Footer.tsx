@@ -13,16 +13,23 @@ export default function V2Footer() {
 
                 {/* Branding Column */}
                 <div className="md:col-span-5 pr-8">
-                    <div className="font-display text-3xl tracking-[0.1em] text-transparent bg-clip-text bg-gradient-gold-foil mb-6">
-                        Noble Rock
+                    <div className="mb-8">
+                        <Link href="/v2">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src="/images/noble_rock_logo.png"
+                                alt="Noble Rock Private Wealth"
+                                style={{ height: '64px', width: 'auto', objectFit: 'contain', opacity: 0.9 }}
+                            />
+                        </Link>
                     </div>
                     <p className="text-[11px] tracking-widest leading-loose mb-10 max-w-sm text-noble-slate/80 font-light">
                         Architecting enduring legacy through mathematical absolute return strategies and uncompromising fiduciary oversight.
                     </p>
-                    <button className="group flex items-center gap-4 bg-transparent border border-noble-gold-800/50 text-noble-gold-400 px-6 py-3 text-[9px] font-bold tracking-[0.3em] uppercase hover:bg-noble-gold-900/10 hover:border-noble-gold-500 hover:text-noble-parchment transition-all duration-500 rounded-none w-max">
+                    <Link href="/v2/portal" className="group inline-flex items-center gap-4 bg-transparent border border-noble-gold-800/50 text-noble-gold-400 px-6 py-3 text-[9px] font-bold tracking-[0.3em] uppercase hover:bg-noble-gold-900/10 hover:border-noble-gold-500 hover:text-noble-parchment transition-all duration-500 rounded-none w-max">
                         Contact The Firm
                         <ArrowUpRight className="w-3 h-3 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-500" />
-                    </button>
+                    </Link>
                 </div>
 
                 {/* Navigation Links */}
@@ -30,9 +37,9 @@ export default function V2Footer() {
                     <h4 className="text-[9px] font-bold tracking-[0.4em] uppercase text-noble-gold-600 mb-8 border-b border-noble-gold-900/30 pb-4 inline-block">The Firm</h4>
                     <ul className="space-y-5 text-[11px] tracking-widest text-noble-slate/70">
                         <li><Link href="/v2/the-firm" className="hover:text-noble-parchment transition-colors duration-500">Heritage</Link></li>
-                        <li><Link href="/v2/philosophy" className="hover:text-noble-parchment transition-colors duration-500">Philosophy</Link></li>
-                        <li><Link href="/v2/team" className="hover:text-noble-parchment transition-colors duration-500">Executive Committee</Link></li>
-                        <li><Link href="/v2/careers" className="hover:text-noble-parchment transition-colors duration-500">Careers</Link></li>
+                        <li><Link href="/v2/the-firm" className="hover:text-noble-parchment transition-colors duration-500">Philosophy</Link></li>
+                        <li><Link href="/v2/the-firm" className="hover:text-noble-parchment transition-colors duration-500">Executive Committee</Link></li>
+                        <li><Link href="/v2/portal" className="hover:text-noble-parchment transition-colors duration-500">Careers</Link></li>
                     </ul>
                 </div>
 
@@ -64,9 +71,9 @@ export default function V2Footer() {
 
                 <div className="flex flex-col items-end gap-4 min-w-max">
                     <div className="flex gap-6 uppercase tracking-[0.2em]">
-                        <Link href="/v2/privacy" className="hover:text-noble-parchment transition-colors duration-500">Privacy Policy</Link>
-                        <Link href="/v2/terms" className="hover:text-noble-parchment transition-colors duration-500">Terms of Use</Link>
-                        <Link href="/v2/fsr" className="hover:text-noble-parchment transition-colors duration-500">FSR</Link>
+                        <Link href="/v2" className="hover:text-noble-parchment transition-colors duration-500">Privacy Policy</Link>
+                        <Link href="/v2" className="hover:text-noble-parchment transition-colors duration-500">Terms of Use</Link>
+                        <Link href="/v2" className="hover:text-noble-parchment transition-colors duration-500">FSR</Link>
                     </div>
                     <p>&copy; {new Date().getFullYear()} Noble Rock. All Rights Reserved.</p>
                 </div>

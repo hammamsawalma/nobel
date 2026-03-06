@@ -30,49 +30,53 @@
 
   /* MASTERPIECE V2: OPTION C "GILDED AGE" THEME TOKENS */
 
-  /* Core Backgrounds (The Private Club) */
-  --color-noble-obsidian: #0A0807;
-  /* Extremely dark warm brown */
-  --color-noble-charcoal: #14100E;
-  /* Deep Espresso */
-  --color-noble-espresso: #1A1512;
-  --color-noble-leather: #241D1A;
-  /* Mahogany / Walnut */
+  /* Core Backgrounds */
+  --color-noble-obsidian: #050403;
+  --color-noble-charcoal: #13100D;
+  /* Deeper for better contrast */
+  --color-noble-espresso: #1E1712;
+  --color-noble-leather: #2A1E17;
 
-  /* The Metals (Luminous Gold Scale) */
-  --color-noble-gold-100: #FFF9E6;
-  /* Bright highlight */
-  --color-noble-gold-300: #F4D799;
-  --color-noble-gold-500: #D4AF37;
-  /* Base Luminous Gold */
-  --color-noble-gold-600: #C29B27;
-  --color-noble-gold-700: #A68019;
-  /* Burnished Brass */
-  --color-noble-gold-900: #785A0D;
-  /* Shadow Gold */
+  /* The Metals (Luminous Gold Scale) - BOOSTED for contrast */
+  --color-noble-gold-100: #FFFDF4;
+  --color-noble-gold-300: #FAE99A;
+  /* Brighter */
+  --color-noble-gold-400: #F5D46A;
+  /* Higher contrast */
+  --color-noble-gold-500: #EEC23D;
+  /* Vivid base gold */
+  --color-noble-gold-600: #D4A520;
+  --color-noble-gold-700: #B88900;
+  --color-noble-gold-900: #7A5B00;
 
-  /* Typography (The Ink) */
-  --color-noble-parchment: #FDF9F1;
-  /* Warm cream */
-  --color-noble-ivory: #FFFDF9;
-  --color-noble-slate: #A3968C;
-  /* Warm grey/taupe for muted text */
-  --color-noble-ink: #1C1614;
+  /* Typography (CONTRAST-UPGRADED) */
+  --color-noble-parchment: #FDF6E8;
+  --color-noble-ivory: #FFFEFA;
+  --color-noble-slate: #D4C9BE;
+  /* UPGRADED: was #C0B7AF — now passes AA contrast on dark */
+  --color-noble-slate-dim: #A8998C;
+  /* For truly secondary text */
+  --color-noble-ink: #191411;
 
-  /* Masterpiece FX (The Shine) */
+  /* Masterpiece FX */
   --gradient-gold-foil: linear-gradient(135deg, var(--color-noble-gold-300) 0%, var(--color-noble-gold-500) 45%, var(--color-noble-gold-100) 50%, var(--color-noble-gold-600) 55%, var(--color-noble-gold-700) 100%);
   --gradient-obsidian-depth: linear-gradient(180deg, var(--color-noble-charcoal) 0%, var(--color-noble-obsidian) 100%);
   --gradient-leather-panel: linear-gradient(145deg, var(--color-noble-leather) 0%, var(--color-noble-espresso) 100%);
 
-
   /* Fonts */
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Outfit", "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
   /* Animations */
   --animate-fade-in: fade-in 0.5s ease-out forwards;
   --animate-fade-in-up: fade-in-up 0.6s ease-out forwards;
   --animate-slide-in-right: slide-in-right 0.5s ease-out forwards;
+  --animate-shimmer: shimmer 2.5s linear infinite;
+  --animate-pulse-gold: pulse-gold 3s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-scan: scan 8s linear infinite;
 }
+
+/* ======================= KEYFRAMES ======================= */
 
 @keyframes fade-in {
   from {
@@ -87,7 +91,7 @@
 @keyframes fade-in-up {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(24px);
   }
 
   to {
@@ -108,19 +112,81 @@
   }
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
   }
 
-  to {
-    opacity: 1;
+  100% {
+    background-position: 200% center;
   }
 }
 
+@keyframes pulse-gold {
+
+  0%,
+  100% {
+    opacity: 0.4;
+    box-shadow: 0 0 0px rgba(238, 194, 61, 0);
+  }
+
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(238, 194, 61, 0.3);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ======================= ROOT & BODY ======================= */
+
 :root {
-  --background: var(--color-slate-50);
-  --foreground: var(--color-slate-900);
+  --background: var(--color-slate-50, #f8fafc);
+  --foreground: var(--color-slate-900, #0f172a);
 }
 
 body {
@@ -131,4 +197,79 @@ body {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* ======================= V2 UTILITIES ======================= */
+
+/* Animated gold shimmer text */
+.text-shimmer-gold {
+  background: linear-gradient(90deg,
+      var(--color-noble-gold-700) 0%,
+      var(--color-noble-gold-400) 30%,
+      var(--color-noble-gold-100) 50%,
+      var(--color-noble-gold-400) 70%,
+      var(--color-noble-gold-700) 100%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: var(--animate-shimmer);
+}
+
+/* Gold scan line overlay for hero sections */
+.v2-hero-scanline::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+      transparent 50%,
+      rgba(238, 194, 61, 0.015) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Gold glow border */
+.border-gold-glow {
+  border-color: rgba(238, 194, 61, 0.5);
+  box-shadow: 0 0 12px rgba(238, 194, 61, 0.12), inset 0 0 12px rgba(238, 194, 61, 0.04);
+}
+
+/* Floating animation utility */
+.animate-float {
+  animation: var(--animate-float);
+}
+
+/* Pulse gold utility */
+.animate-pulse-gold {
+  animation: var(--animate-pulse-gold);
+}
+
+/* Shimmer text utility */
+.animate-shimmer {
+  animation: var(--animate-shimmer);
+}
+
+/* Focus content: darken surroundings on hover of article rows */
+.v2-content-focus-group:hover .v2-content-focus-item:not(:hover) {
+  opacity: 0.4;
+  filter: blur(1px);
+}
+
+.v2-content-focus-item {
+  transition: opacity 0.5s ease, filter 0.5s ease;
+}
+
+/* Gradient shift text */
+.text-gradient-shift {
+  background: linear-gradient(270deg,
+      var(--color-noble-gold-300),
+      var(--color-noble-gold-500),
+      var(--color-noble-parchment),
+      var(--color-noble-gold-400));
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 6s ease infinite;
 }
