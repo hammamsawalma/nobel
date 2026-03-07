@@ -3,8 +3,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Info, ChevronUp } from 'lucide-react';
-import V11Header from "@/components/v2/Header";
-import V11Footer from "@/components/v2/Footer";
+import V11Header from "@/components/v1/Header";
+import V11Footer from "@/components/v1/Footer";
 
 // Premium Placeholder Financial Terms
 const glossaryData = [

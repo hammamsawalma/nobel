@@ -4,8 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { format } from 'date-fns';
 import { ChevronLeft, Calendar, Tag } from 'lucide-react';
-import V11Header from "@/components/v2/Header";
-import V11Footer from "@/components/v2/Footer";
+import V11Header from "@/components/v1/Header";
+import V11Footer from "@/components/v1/Footer";
 import type { Metadata } from 'next';
 
 export const revalidate = 60;

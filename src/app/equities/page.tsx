@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronRight, Percent, ArrowUpRight, Target, Activity } from 'lucide-react';
-import V11Header from "@/components/v2/Header";
-import V11Footer from "@/components/v2/Footer";
-import AssetAllocationSandbox from "@/components/v2/AssetAllocationSandbox";
+import V11Header from "@/components/v1/Header";
+import V11Footer from "@/components/v1/Footer";
+import AssetAllocationSandbox from "@/components/v1/AssetAllocationSandbox";
 
 export default function EquitiesPage() {
     const snapSpring = { type: "spring", stiffness: 300, damping: 20, mass: 0.8 };

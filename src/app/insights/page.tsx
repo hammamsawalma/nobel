@@ -2,8 +2,8 @@ import { prisma } from '@/lib/prisma';
 import Image from 'next/image';
 import { format } from 'date-fns';
 import { ArrowRight, Compass, Calendar, ExternalLink } from 'lucide-react';
-import V11Header from "@/components/v2/Header";
-import V11Footer from "@/components/v2/Footer";
+import V11Header from "@/components/v1/Header";
+import V11Footer from "@/components/v1/Footer";
 
 export const revalidate = 60; // Revalidate every 60 seconds
 

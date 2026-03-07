@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Compass, ShieldCheck, TrendingUp, CheckCircle, ChevronRight, FileCheck } from 'lucide-react';
-import V11Header from "@/components/v2/Header";
-import V11Footer from "@/components/v2/Footer";
+import V11Header from "@/components/v1/Header";
+import V11Footer from "@/components/v1/Footer";
 
 export default function HowToInvestPage() {
     const snapSpring = { type: "spring", stiffness: 300, damping: 20, mass: 0.8 };

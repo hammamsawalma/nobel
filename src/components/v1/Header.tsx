@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import ClientPortalModal from '@/components/v2/ClientPortalModal';
+import ClientPortalModal from '@/components/v1/ClientPortalModal';
 import {
     BarChart3,
     TrendingUp,
